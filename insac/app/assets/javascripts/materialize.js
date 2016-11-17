@@ -539,7 +539,7 @@ if (jQuery) {
       hover: false,
       gutter: 0, // Spacing from edge
       belowOrigin: false,
-      alignment: 'left',
+      alignment: 'center-align',
       stopPropagation: false
     };
 
