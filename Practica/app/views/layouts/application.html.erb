@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practica</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,700" rel="stylesheet" type="text/css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+<link rel="stylesheet" href="fonts/style.css">
+	<nav class="be-red white large-padding">
+		<ul class="no-list row center-xs middle-xs">
+		<li class="col-md">
+		<h1 > <span class="no-margin" style="color:#F8DA00;" id="logo"> <%= link_to "INSAC", root_path%></span> </h1>
+		</li>
+
+		<li class="col-md">
+		<span class="icon-user-check"><%= link_to "Asistencia", asistencias_url%>
+		</span>
+
+		</li>
+		<li class="col-md">
+		<%= link_to "Trabajadores", trabajadores_url%>
+		</li>
+			
+		<li class="col-md">
+		<%= link_to "Reporte", reportes_url%>
+		</li>
+			
+		</ul>
+	</nav>
+</header>
+
+<%= yield %>
+
+</body>
+</html>
