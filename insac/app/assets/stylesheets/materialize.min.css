@@ -62,7 +62,7 @@ h5.login-title {
 }
 /* label focus color */
 .input-field input[type=text]:focus + label {
- color: #000;
+ color: #37474f;
 }
 /* label underline focus color */
 .input-field input[type=text]:focus,
@@ -73,7 +73,7 @@ h5.login-title {
 }
  
 .btn {
-	background-color: #ff1744;
+	background-color: #37474f;
 	text-transform: none;
 	width: 100%;
 }
