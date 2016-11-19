@@ -8,7 +8,8 @@
 
 
 .icon-block {
-  padding: 0 15px;
+  padding: 0 15px;/* Custom Stylesheet */
+
 }
 .icon-block .material-icons {
 	font-size: inherit;
