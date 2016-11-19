@@ -1,16 +1,19 @@
 class WorkersController < ApplicationController
 
+
+#GET /workers
 def index
-	@worker = Worker.all
+
+	@workers = Worker.all
 
 end
 
 
 
-	def new
-	@worker = Worker.new
+def new
+@worker = Worker.new
 
-     end
+end
 
 
 
@@ -19,11 +22,16 @@ end
    end
 
 
+#GET /workers/:id
+
    def show
 
    @worker = Worker.find(params[:id])
 
    end
+
+
+
 
 
 	def create
