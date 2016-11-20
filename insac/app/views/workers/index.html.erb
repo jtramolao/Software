@@ -1,10 +1,34 @@
 
+    <table class="highlight">
+        <thead>
+          <tr>
+              <th data-field="id">Nombre</th>
+              <th data-field="name">Rut</th>
+              <th data-field="price">Equipo</th>
+          </tr>
+        </thead>
+
+
 
 <% @workers.each do |worker| %>
-<%= link_to worker.nombre, worker %>
-<div>
-	<%= worker.rut %> - <%= link_to "Eliminar", worker, method: :delete %> 
-</div>
+
+
+       <tbody>
+          <tr>
+            <td><%= link_to worker.nombre, worker %></td>
+            <td><%= worker.rut %></td>
+            <td><%= worker.equipo %></td>
+            <td ><%= link_to "Eliminar", worker, method: :delete %></td>
+          </tr>
+
+        </tbody>
+
 
 
 <%end%>
+
+      </table>
+            
+
+
+
