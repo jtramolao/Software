@@ -1,0 +1,10 @@
+
+
+<% @workers.each do |worker| %>
+<%= link_to worker.nombre, worker %>
+<div>
+	<%= worker.rut %> - <%= link_to "Eliminar", worker, method: :delete %> 
+</div>
+
+
+<%end%>
