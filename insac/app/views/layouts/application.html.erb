@@ -14,16 +14,15 @@
 
 
     <ul id="slide-out" class="side-nav">
-      <li><a href="#!">First Sidebar Link</a></li>
-      <li><a href="#!">Second Sidebar Link</a></li>
+  
       <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
           <li>
             <a class="collapsible-header">Trabajadores</a>
             <div class="collapsible-body">
               <ul>
-                <li><a href="#!">Ingresar</a></li>
-                <li><a href="#!">Editar</a></li>
+                <li><%= link_to "Ingresar", new_worker_path(@worker) %></li>
+                <li><%= link_to "Editar ", workers_path(@worker) %></li>
                 <li><a href="#!">Eliminar</a></li>
               </ul>
             </div>
