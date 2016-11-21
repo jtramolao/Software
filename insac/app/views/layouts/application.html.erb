@@ -1,11 +1,8 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <link href="stylesheet/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="stylesheet" type="text/css" href="stylesheet/materialize.min.css">
-  <link href="stylesheet/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 <title>INSAC</title>
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -13,26 +10,53 @@
 </head>
 <body>
 <nav class="blue-grey darken-3">
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo right"><span style="color: #FFBA22">INSAC</span></a>
-    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-    <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li><a>Enlace 1</a></li>
-      <li><a>Enlace 2</a></li>
-      <li><a>Enlace 3</a></li>
+  <div class="container"><a class="brand-logo center" ><span style="color: #FFBA22">INSAC</span></a>
+
+
+    <ul id="slide-out" class="side-nav">
+      <li><a href="#!">First Sidebar Link</a></li>
+      <li><a href="#!">Second Sidebar Link</a></li>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Trabajadores</a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#!">Ingresar</a></li>
+                <li><a href="#!">Editar</a></li>
+                <li><a href="#!">Eliminar</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a class="collapsible-header">Asistencia</a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#!">Ingresar</a></li>
+                <li><a href="#!">Editar</a></li>
+                <li><a href="#!">Buscar</a></li>
+              </ul>
+            </div>
+          </li>
+                    <li>
+            <a class="collapsible-header">Informes</a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#!">Crear</a></li>
+                <li><a href="#!">Editar</a></li>
+                <li><a href="#!">Buscar</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
     </ul>
-    <ul class="side-nav" id="mobile-demo">
-      <li><a>Enlace 1</a></li>
-      <li><a>Enlace 2</a></li>
-      <li><a>Enlace 3</a></li>
-    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i style="color: #FFBA22">Menu Principal</i></a>
+          
   </div>
 </nav>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script>
     $(document).ready(function(){
       $('dropdown-button').dropdown();
