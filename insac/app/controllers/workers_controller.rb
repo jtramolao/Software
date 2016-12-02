@@ -91,5 +91,8 @@ end
 		params.require(:worker).permit(:nombre,:rut,:direccion,:email,:telefono,:equipo,:jefe)
 	end
 
+	def set_worker
+		@worker =  = Worker.find(params[:id])
+	end
 
 end

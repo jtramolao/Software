@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  worker_id: 
+  asistio: false
+  excepcion: false
+  fecha: 2016-12-02
+  horas: 1
+
+two:
+  worker_id: 
+  asistio: false
+  excepcion: false
+  fecha: 2016-12-02
+  horas: 1
