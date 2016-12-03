@@ -88,6 +88,19 @@
 
 </div>
 
+
+
+<% if @worker.assistances.any? %>
+  <ul>
+    <% @worker.assistances.each do |assistance| %>
+    <li><%= link_to assistance, assistance %></li> 
+    <% end %>
+  </ul>
+<% else %>
+  <p>no hay sucursales</p>
+<% end %>
+
+
 </body>
 </html>
 

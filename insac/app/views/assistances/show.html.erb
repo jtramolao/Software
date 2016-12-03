@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Worker:</strong>
+  <%= @assistance.worker %>
+</p>
+
+<p>
+  <strong>Asistio:</strong>
+  <%= @assistance.asistio %>
+</p>
+
+<p>
+  <strong>Licencia:</strong>
+  <%= @assistance.excepcion %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @assistance.fecha %>
+</p>
+
+<%= link_to 'Edit', edit_assistance_path(@assistance) %> |
+<%= link_to 'Back', assistances_path %>
