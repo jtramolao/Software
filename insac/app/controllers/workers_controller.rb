@@ -5,6 +5,7 @@ class WorkersController < ApplicationController
 def index
 
 	@workers = Worker.all
+	@assistance = Assistance.new
 
 end
 
@@ -27,6 +28,7 @@ end
    def show
 
    @worker = Worker.find(params[:id])
+   @assistance = Assistance.new
 
    end
 
@@ -59,12 +61,12 @@ end
 
 
    def destroy
-	#DELETE FROM Articles
+	
 
 	@worker = Worker.find(params[:id])
 	@worker.destroy #destroy elimina el objeto de la bd
 	redirect_to workers_path
-end
+  end
 
 
 

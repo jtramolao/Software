@@ -1,6 +1,18 @@
 
 .clear {clear: both;}
 
+
+#tabla{
+	float :left;
+	
+	padding: 25px 35px;
+	background: #f3f3f3;
+	margin: 30px auto;
+	font-size: 1.5em;
+
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+}
+
 p {
 	font-size: 1em;
 	line-height: 1.4em;
@@ -9,10 +21,12 @@ p {
 }
 
 #cv {
+	padding: 25px 35px;
 	width: 90%;
 	max-width: 800px;
 	background: #f3f3f3;
 	margin: 30px auto;
+	float :left;
 }
 
 .mainDetails {
