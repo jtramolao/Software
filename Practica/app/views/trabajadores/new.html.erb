@@ -1,0 +1,20 @@
+<div style="width: 80%;margin: 0 auto;">
+<h1>Ingreso de un nuevo trabajador</h1>
+<%= form_for @trabajador, url: {action: "create"}  do  |f| %>
+	<div class="field">
+		<%= f.text_field:nombre, placeholder: "Nombre"%>
+	</div>
+		<div class="field">
+		<%= f.text_field:rut, placeholder: "Rut"%>
+	</div>
+		<div class="field">
+		<%= f.text_field:direccion, placeholder: "Direccion"%>
+	</div>
+		<div class="field">
+		<%= f.text_field:edad, placeholder: "Edad"%>
+	</div>
+	<div class="field">
+		<%= f.submit "Agregar", class: "btn"%>
+	</div>
+	<%end -%>
+	</div>
