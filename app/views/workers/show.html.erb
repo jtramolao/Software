@@ -90,8 +90,18 @@
 
 
 
+
+
+
+
+
+
+
+
 <div id="tabla"  >
 
+
+<%= render 'assistances/form' %>
 
 <table class="highlight">
         <thead>
@@ -122,7 +132,7 @@
       
 
 
-            <td ><%= link_to "Eliminar",[assistance.worker, assistance ],method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+            <td ><%= link_to "Eliminar",[assistance.worker, assistance ],method: :delete, class:"waves-effect waves-light btn",data: { confirm: '¿Estas Seguro?' } %> </td>
 
             
           </tr>
@@ -140,12 +150,6 @@
 
 </div>
 
-<div>
-
-
-<%= render 'assistances/form' %>
-
-</div>
 
 
 

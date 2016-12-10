@@ -65,7 +65,7 @@ end
 
 	@worker = Worker.find(params[:id])
 	@worker.destroy #destroy elimina el objeto de la bd
-	redirect_to workers_path
+	redirect_to deletes_index_path
   end
 
 

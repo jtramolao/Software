@@ -9,7 +9,9 @@
 
 
 
-
+.hidden{
+  display: none;
+}
 
  
 .materialize-red {

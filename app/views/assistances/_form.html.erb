@@ -1,3 +1,6 @@
+
+
+
 <%= form_for([@worker,@assistance]) do |f| %>
   <% if @assistance.errors.any? %>
     <div id="error_explanation">
@@ -11,34 +14,19 @@
     </div>
   <% end %>
 
+ 
 
-
-   <%= f.label :asistio ,"Falto"%>
+ <%= f.label :asistio ,"Falto" ,class: "label-size"%>
     <%= f.check_box :asistio  %>
 
-
-    <%= f.label :fecha %>
-    <%= f.date_select :fecha %>
-  
-
-
- 
-  
+       <%= f.label :fecha ,"Marcar si no asistio"%>
+    <%= f.date_select :fecha %> 
 
 
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <a class="waves-effect waves-light btn"><div class="actions" >
+    <%= f.submit "Crear Asistencia"%> </div></a>
 
-
-
-
-
-
-
-
-  
 
 
 

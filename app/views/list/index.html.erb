@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Assistancessssss</h1>
+<h1>Lista Asistencia</h1>
 
 <table>
   <thead>
@@ -16,7 +16,7 @@
   <tbody>
     <% @assistances.each do |assistance| %>
       <tr>
-        <td><%= assistance.worker %></td>
+        <td><%= assistance.worker.nombre %></td>
         <td><%= assistance.asistio %></td>
         <td><%= assistance.excepcion %></td>
         <td><%= assistance.fecha %></td>

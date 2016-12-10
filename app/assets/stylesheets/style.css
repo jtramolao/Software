@@ -7,6 +7,15 @@
  */
 
 
+ .label-size{
+ 	font-size:0.9em;
+ 	color: black;
+ }
+
+.hidden{
+  display: none;
+}
+
 .icon-block {
   padding: 0 15px;/* Custom Stylesheet */
 
