@@ -10,10 +10,11 @@ end
 
 def destroy
 
-  @worker = Worker.find(params[:worker_id]) 
-  @assistance = @worker.assistance.find(params[:id]) 
-  @assistance.destroy 
-  redirect_to worker_path(@worker) 
+ 
+    @worker = Worker.find(params[:worker_id])
+    @assistance = @worker.assistances.find(params[:id])
+    @assistance.destroy
+    redirect_to worker_path(@worker)
   end 
 
 
@@ -39,7 +40,7 @@ def create
 
 @assistance = Assistance.new(assistance_params) 
 @assistance.worker = @worker
-
+ 
 
 
 	if @assistance.save
