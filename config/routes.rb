@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
 
-get 'delete/index'
+  get 'delete/index'
 
   resources :workers do
     resources :assistances

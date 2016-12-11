@@ -1,7 +1,5 @@
-class WorkersController < ApplicationController
+class DeleteController < ApplicationController
 
-
-#GET /workers
 def index
 
 	@workers = Worker.all
