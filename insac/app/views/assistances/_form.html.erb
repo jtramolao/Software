@@ -1,4 +1,4 @@
-<%= form_for(@assistance) do |f| %>
+<%= form_for([@worker,@assistance]) do |f| %>
   <% if @assistance.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@assistance.errors.count, "error") %> prohibited this assistance from being saved:</h2>
@@ -11,29 +11,18 @@
     </div>
   <% end %>
 
-    <%= f.label :worker_id %><
-    <%= f.text_field :worker_id %>
-  
 
 
-   <% @workers.each do |worker| %>
+   <%= f.label :asistio ,"Falto"%>
+    <%= f.check_box :asistio  %>
 
-   <%=worker.nombre%>
 
-   <%= f.label :asistio %>
-    <%= f.check_box :asistio , assistance.worker.id %>
-
-   <% end %>
-    
-  
-    <%= f.label :asistio %>
-    <%= f.check_box :asistio %>
-  
-     <%= f.label :excepcion %>
-    <%= f.check_box :excepcion %>
-  
     <%= f.label :fecha %>
     <%= f.date_select :fecha %>
+  
+
+
+ 
   
 
 

@@ -14,7 +14,7 @@
 
 </head>
 <body id="top">
-<div id="cv" >
+<div id="cv"  >
 	<div class="mainDetails">
 		
 		<div id="name">
@@ -90,15 +90,56 @@
 
 
 
-<% if @worker.assistances.any? %>
-  <ul>
-    <% @worker.assistances.each do |assistance| %>
-    <li><%= link_to assistance, assistance %></li> 
-    <% end %>
-  </ul>
-<% else %>
-  <p>no hay sucursales</p>
-<% end %>
+<div id="tabla"  >
+
+
+<table class="highlight">
+        <thead>
+          <tr>
+              <th data-field="id">Asisitio</th>
+              <th data-field="name">Fecha</th
+          </tr>
+        </thead>
+
+
+
+<% @worker.assistances.each do |assistance| %>
+
+
+       <tbody>
+          <tr>
+          	<% if assistance.asistio==false %>
+
+            <td><%="Asistio"%></td>
+
+            <%else%>
+
+            <td><%="Falto"%></td>
+
+            <%end%>
+        
+            <td><%= assistance.fecha %></td>
+      
+
+
+            <td ><%= link_to "Eliminar",[assistance.worker, assistance ],method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+
+            
+          </tr>
+
+        </tbody>
+
+
+
+<%end%>
+
+      </table>
+            
+
+
+
+</div>
+
 
 
 </body>
