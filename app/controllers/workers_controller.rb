@@ -1,4 +1,5 @@
 class WorkersController < ApplicationController
+before_action :authenticate_user!
 
 
 #GET /workers
@@ -89,9 +90,15 @@ end
 	
 
 	private
+	def validate_user
+		redirect_to new_user_session_path, notice: "Debes iniciar sesion"
+		
+	end
 	def worker_params
 		params.require(:worker).permit(:nombre,:rut,:direccion,:email,:telefono,:equipo,:jefe)
 	end
+
+
 
 	
 

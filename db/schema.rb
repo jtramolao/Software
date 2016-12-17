@@ -76,8 +76,6 @@ ActiveRecord::Schema.define(version: 20161212030953) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.string   "name"
-    t.string   "permission_level"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "worker_id"
