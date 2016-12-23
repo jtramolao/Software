@@ -1,4 +1,5 @@
 class AssistancesController < ApplicationController
+  before_action :authenticate_user!
 before_action :set_worker
 
 
