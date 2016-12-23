@@ -3,13 +3,22 @@ before_action :authenticate_user!
 
 
 #GET /workers
+
 def index
 
-	@workers = Worker.all
+	 @search = Worker.search(params[:q])
+
+	@workers = @search.result
+
 	@assistance = Assistance.new
 
 end
 
+
+def search
+  index
+  render :index
+end
 
 
 def new

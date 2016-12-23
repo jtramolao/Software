@@ -1,6 +1,27 @@
 
+<%= search_form_for @search do |f| %>
+
+  
+
+
+ 
+
+
+
+
+
     <table class="highlight">
         <thead>
+          <tr>
+              <th><%= f.label :nombre_cont, "Nombre" %><%= f.search_field :nombre_cont %>
+</th>
+              <th> <%= f.label :rut_cont, "Rut" %><%= f.search_field :rut_cont %>
+</th>
+              <th> <%= f.label :equipo_cont, "Equipo" %><%= f.search_field :equipo_cont %></th>
+              <th> <%= f.submit "Buscar" , class:"waves-effect waves-light btn" %></th>
+
+
+          </tr>
           <tr>
               <th data-field="id">Nombre</th>
               <th data-field="name">Rut</th>
@@ -8,7 +29,7 @@
           </tr>
         </thead>
 
-
+<%end%>
 
 <% @workers.each do |worker| %>
 

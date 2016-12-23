@@ -1,7 +1,11 @@
 class ListController < ApplicationController
 	before_action :authenticate_user!
+
+
   def index
-  	@assistances = Assistance.all
+
+  	@search = Assistance.search(params[:q])
+  	@assistances = @search.result
     
 
   end

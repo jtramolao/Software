@@ -1,29 +1,49 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lista Asistencia</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Worker</th>
-      <th>Asistio</th>
-      <th>Licencia</th>
-      <th>Fecha</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @assistances.each do |assistance| %>
-      <tr>
-        <td><%= assistance.worker.nombre %></td>
-        <td><%= assistance.asistio %></td>
-        <td><%= assistance.excepcion %></td>
-        <td><%= assistance.fecha %></td>
 
-     
-    <% end %>
-  </tbody>
-</table>
+    <table class="highlight">
+        <thead>
+  
+          <tr>
+              <th data-field="id">Nombre</th>
+              <th data-field="name">Asistencia</th>
+              <th data-field="price">Fecha</th>
+          </tr>
+        </thead>
 
-<br>
+
+         <% @assistances.each do |assistance| %>
+
+       <tbody>
+          <tr>
+            <td><%= assistance.worker.nombre %></td>
+            <td><% if assistance.asistio==false %>
+
+            <%="Asistio"%>
+
+            <%else%>
+
+            <%="Falto"%>
+
+            <%end%>
+        
+          
+
+
+
+
+
+          </td>
+            <td><%= assistance.fecha %></td>
+           
+          </tr>
+
+        </tbody>
+
+
+
+<%end%>
+
+      </table>
