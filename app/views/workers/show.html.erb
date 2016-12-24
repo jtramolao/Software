@@ -106,7 +106,7 @@
 <table class="highlight">
         <thead>
           <tr>
-              <th data-field="id">Asisitio</th>
+              <th data-field="id">Asistencia</th>
               <th data-field="name">Fecha</th
           </tr>
         </thead>
@@ -120,15 +120,15 @@
           <tr>
           	<% if assistance.asistio==false %>
 
-            <td><%="Asistio"%></td>
+            <td> <%= image_tag("Ticket_verde.png", :alt => "rss feed",size: "25") %></td>
 
             <%else%>
 
-            <td><%="Falto"%></td>
+            <td><%= image_tag("Ticket_rojo.svg", :alt => "rss feed",size: "25") %></td>
 
             <%end%>
         
-            <td><%= assistance.fecha %></td>
+            <td> <%= assistance.fecha.strftime("%b %d, %Y") %></td>
       
 
 
@@ -138,6 +138,8 @@
           </tr>
 
         </tbody>
+
+
 
 
 

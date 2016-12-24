@@ -1,15 +1,27 @@
+
+<html>
+<body>
+  <head>
+
+  
+
+
+<body>
+
+
+
 <p id="notice"><%= notice %></p>
 
 
 
 
-    <table class="highlight">
+    <table class="highlight centered bordered">
         <thead>
   
           <tr>
-              <th data-field="id">Nombre</th>
-              <th data-field="name">Asistencia</th>
-              <th data-field="price">Fecha</th>
+              <th data-field="id"> <i class="material-icons prefix">account_circle</i> Nombre</th>
+              <th data-field="name"> <i class="material-icons prefix">done</i>Asistencia</th>
+              <th data-field="price"><i class="material-icons prefix">schedule</i>Fecha</th>
           </tr>
         </thead>
 
@@ -21,11 +33,11 @@
             <td><%= assistance.worker.nombre %></td>
             <td><% if assistance.asistio==false %>
 
-            <%="Asistio"%>
+            <%= image_tag("Ticket_verde.png", :alt => "rss feed",size: "25") %>
 
             <%else%>
 
-            <%="Falto"%>
+            <%= image_tag("Ticket_rojo.svg", :alt => "rss feed",size: "25") %>
 
             <%end%>
         
@@ -36,7 +48,11 @@
 
 
           </td>
-            <td><%= assistance.fecha %></td>
+
+
+            <td><%= assistance.fecha.strftime("%B %d, %Y") %></td>
+
+         
            
           </tr>
 
@@ -47,3 +63,7 @@
 <%end%>
 
       </table>
+
+
+    </body>
+    </html>
