@@ -33,6 +33,13 @@ def create
     end
   end
 
+   def destroy
+  
+
+  @boss = Boss.find(params[:id])
+  @boss.destroy #destroy elimina el objeto de la bd
+  redirect_to bosses_path
+  end
 
 
 

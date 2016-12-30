@@ -14,7 +14,7 @@
 
 
 <nav class="blue-grey darken-3">
-  <div class="nav-wrapper container"><a class="brand-logo right" ><span style="color: #FFBA22">INSAC</span></a>
+  <div class="nav-wrapper container"><span style="color: #FFBA22"><%= link_to "INSAC", welcome_index_path , class:"brand-logo right" %></span>
 
 
     <ul id="slide-out" class="side-nav">
@@ -44,12 +44,23 @@
             </div>
           </li>
            <li>
-            <a class="collapsible-header">Personal<i class="small material-icons">person_pin</i></a>
+            <a class="collapsible-header">Jefes<i class="small material-icons">person_pin</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a class="collapsible-header">Agregar Jefe</a></li>
+                <li><%= link_to "Agregar", new_boss_path(@boss) %></li>
                 
-                <li><a href="#!">Agregar Equipo</a></li>
+                <li><%= link_to "Editar/Eliminar ", bosses_path(@boss) %></li>
+              </ul>
+            </div>
+          </li>
+
+           <li>
+            <a class="collapsible-header">Equipos<i class="small material-icons">person_pin</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><%= link_to "Agregar ", new_equip_path(@equip) %></li>
+                
+                <li><%= link_to "Editar/Eliminar ", equips_path(@equip) %></li>
               </ul>
             </div>
           </li>
