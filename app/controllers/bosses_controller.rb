@@ -10,6 +10,8 @@ class BossesController < ApplicationController
   # GET /equips/1
   # GET /equips/1.json
   def show
+
+    @boss = Boss.find(params[:id])
   end
 
   # GET /equips/new
@@ -17,5 +19,25 @@ class BossesController < ApplicationController
     @boss = Boss.new
   end
 
+def create
+    @boss = Boss.new(boss_params)
+
+    respond_to do |format|
+      if @boss.save
+        format.html { redirect_to @boss, notice: 'Boss was successfully created.' }
+        format.json { render :show, status: :created, location: @equip }
+      else
+        format.html { render :new }
+        format.json { render json: @equip.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
+
+
+  def boss_params
+      params.require(:boss).permit(:nombre, :rut, :telefono , :direccion , :mail)
+    end
 
 end
