@@ -13,8 +13,8 @@
 
 
 
-<%= form_for(@worker) do |f| %>
-    <% @worker.errors.full_messages.each do |message| %>
+<%= form_for(@boss) do |f| %>
+    <% @boss.errors.full_messages.each do |message| %>
       <div class="be-red white top-space">
            *<%= message %>
       </div>
@@ -28,7 +28,7 @@
         
           <div class="row">
             <div class="blue-grey darken-3">
-              <h5 class="center login-title" style="color: #FFBA22">Agregar Trabajador</h5>
+              <h5 class="center login-title" style="color: #FFBA22">Agregar Jefe</h5>
             </div>
           </div>
 
@@ -61,25 +61,12 @@
             </div>            
           </div>
 
-                 <div class="row">
-            <div class="input-field col s6">
-               <i class="material-icons prefix">work</i>
-              <label for="name">Equipo</label>
-             <%=f.text_field :equipo%>
-            </div>  
-            <div class="input-field col s6">
-              <i class="material-icons prefix">perm_identity</i>
-              <label for="lastname">Jefe</label>
-              <%=f.text_field :jefe %>
-            </div>            
-          </div>
-
 
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">email</i>
               <label for="email">Correo</label>
-               <%=f.text_field :email %>
+               <%=f.text_field :mail %>
             </div>
           </div>
 
@@ -96,16 +83,18 @@
              
 
 
-   
          <div class="row">
 
      <div class="col s12" style="color: #FFBA22">
 
-<%= link_to 'Atras', workers_path , class:"btn center-align"%>
+<%= link_to 'Atras', bosses_path , class:"btn center-align"%>
 
 </div>
 
 </div>
+
+
+
 
  <%end%>
 

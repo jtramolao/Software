@@ -1,34 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Equips</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Especialidad</th>
-      <th>Boss</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @equips.each do |equip| %>
-      <tr>
-        <td><%= equip.nombre %></td>
-        <td><%= equip.especialidad %></td>
-        <td><%= equip.boss %></td>
-        <td><%= link_to 'Show', equip %></td>
-        <td><%= link_to 'Edit', edit_equip_path(equip) %></td>
-        <td><%= link_to 'Destroy', equip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Equip', new_equip_path %>
 
 
+
+<table class="highlight">
+        <thead>
+
+          <tr>
+              <th data-field="id"><i class="material-icons prefix">account_circle</i>Equipo</th>
+            
+              <th data-field="price"><i class="material-icons prefix">work</i>Especialidad</th>
+                <th data-field="name"><i class="material-icons prefix">picture_in_picture</i>Jefe</th>
+          </tr>
+        </thead>
+
+
+
+<% @equips.each do |equip| %>
+
+
+       <tbody>
+          <tr>
+            <td><%= link_to equip.nombre, equip %></td>
+            <td><%= equip.especialidad %></td>
+            <td><%= equip.boss.nombre %></td>
+            <td><%= link_to "Eliminar", equip, method: :delete,class:"waves-effect waves-light btn" %></td>
+          </tr>
+
+        </tbody>
+
+
+
+
+<%end%>
+
+      </table>
 

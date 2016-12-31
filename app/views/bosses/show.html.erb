@@ -1,0 +1,65 @@
+<meta charset="UTF-8"> 
+
+<link type="text/css" rel="stylesheet" href="styleShow.css">
+<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body id="top">
+<div id="cv"  >
+	<div class="mainDetails">
+		
+		<div id="name">
+			<h1 class="quickFade delayTwo"><%= @boss.nombre %></h1>
+	
+		</div>
+		
+		<div id="contactDetails" class="quickFade delayFour">
+			<ul>
+				<li>Email: <%= @boss.mail %></li>
+				
+				<li>Telefono: <%= @boss.telefono %></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div id="mainArea" class="quickFade delayFive">
+		<section>
+			<article>
+				<div class="sectionTitle">
+					<h1>Cedula Identidad</h1>
+				</div>
+				
+				<div class="sectionContent">
+					<h2> <%=@boss.rut %></h2>
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Direccion</h1>
+			</div>
+			
+			<div class="sectionContent">
+				
+					<h2><%=@boss.direccion %></h2>
+					
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		
+
+		
+		
+		
+	</div>
+
+    
+
+
+</div>

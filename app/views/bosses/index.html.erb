@@ -1,0 +1,42 @@
+
+
+
+  
+
+
+ 
+
+
+
+
+
+    <table class="highlight">
+        <thead>
+          
+          <tr>
+              <th data-field="id"><i class="material-icons prefix">account_circle</i>Nombre</th>
+              <th data-field="name"><i class="material-icons prefix">picture_in_picture</i>Rut</th>
+              <th data-field="price"><i class="material-icons prefix">work</i>Equipo</th>
+          </tr>
+        </thead>
+
+
+
+<% @bosses.each do |boss| %>
+
+
+       <tbody>
+          <tr>
+            <td><%= link_to boss.nombre, boss %></td>
+            <td><%= boss.rut %></td>
+            <td><%= link_to "Eliminar", boss, method: :delete,class:"waves-effect waves-light btn" %></td>
+          </tr>
+
+        </tbody>
+
+
+
+<%end%>
+
+      </table>
+            

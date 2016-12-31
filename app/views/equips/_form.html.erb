@@ -1,7 +1,9 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Agregar Equipo</title>
+  <title>Reg&iactute;strate</title>
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
@@ -12,64 +14,82 @@
 
 
 
+
 <%= form_for(@equip) do |f| %>
-  <% if @equip.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@equip.errors.count, "error") %> prohibited this equip from being saved:</h2>
-
-      <ul>
-      <% @equip.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <% @equip.errors.full_messages.each do |message| %>
+      <div class="be-red white top-space">
+           *<%= message %>
+      </div>
+    <%end%>
 
 
-
-
-  
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">recent_actors</i>
-          <label for="icon_prefix">Nombre Grupo</label>
-          <%= f.text_field :nombre  %>
-          
-        </div>
-
-        <div class="input-field col s6">
-          <i class="material-icons prefix">star</i>
-     
-          <label for="star">Especialidad</label>
-           <%= f.text_field :especialidad %>
-
-        </div>
-
+   <div class="container">
+    <div class="row">
+    <div class="col s12 m12 l12">
+      <div id="form-login">
+        
           <div class="row">
+            <div class="blue-grey darken-3">
+              <h5 class="center login-title" style="color: #FFBA22">Agregar Equipo</h5>
+            </div>
+          </div>
+
+
+
+
+            <div class="row">
+            <div class="input-field col s6">
+               <i class="material-icons prefix">account_circle</i>
+              <label for="name">Nombre</label>
+             <%=f.text_field :nombre%>
+            </div>  
+            <div class="input-field col s6">
+  
+                    
+   
+<div class="control-group">
+      <i class="material-icons prefix">account_circle</i>
+
+    <%= f.label :especialidad, "Especialidad" %><br />
+    
+      <%= f.select(:especialidad, options_for_select([['Gasfiteria', 'Gasfiteria'], ['Electricidad', 'Electricidad'],['Limpieza', 'Limpieza']]), ) %>
+
+</div>
+
+</div>
+
+
+
+
+
+
+                   <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">account_circle</i>
           
-          <label for="icon_prefix">Jefe</label>
-            <%= f.text_field :boss_id %>
+          <%= f.label :boss_id, "Seleccione el jefe" %><br />
+          <% bos_array = Boss.all.map { |bos| [bos.nombre, bos.id] } %>
+           <%= f.select :boss_id, options_for_select(bos_array, @equip.boss_id) %>
         </div>
 
+
+          
            <div class="row">
             <div class="col s12" style="color: #FFBA22">
               <%=f.submit "Guardar" ,class:"btn center-align"  %>
             </div>
           </div>
-      
-      </div>
 
-      </div>
-    </form>
-  
-  
+   </div>
+</div>
+</div>
+</div>
+             
 
 
-  
-<%end%>
+   
+
+ <%end%>
 
 
 </body>
