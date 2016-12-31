@@ -1,0 +1,48 @@
+<%= form_for(@report) do |f| %>
+    <% @report.errors.full_messages.each do |message| %>
+      <div class="be-red white top-space">
+           *<%= message %>
+      </div>
+    <%end%>
+        <div class="container">
+          <div class="row">
+              <h5 class="center brand-logo" style="color: #37474f">Nuevo reporte de asistencia</h5>
+          <div >
+          <div class="row">
+              <li>
+              Jefe a cargo:
+              </li>
+              <li>
+                Equipo:
+              </li>
+              <li>
+                Fecha:
+              </li>
+            
+          </div>
+
+   <table>
+        <thead>
+          <tr>
+              <th data-field="name"><i class="material-icons prefix">account_circle</i>Nombre</th>
+              <th data-field="id"><i class="material-icons prefix">picture_in_picture</i>Rut</th>
+              <th data-field="extra"><i class="material-icons prefix">work</i>Dias Extras</th>
+              <th data-field="faltados"><i class="material-icons prefix">work</i>Dias Ausente</th>
+              <th data-field="faltados"><i class="material-icons prefix">import_export</i>Bono/Descuento</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+        </tbody>
+    </table>
+            
+</div>
+          </div>
+        </div>
+   
+
+ <%end%>

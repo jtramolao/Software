@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212030953) do
+ActiveRecord::Schema.define(version: 20161230011321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,10 +60,12 @@ ActiveRecord::Schema.define(version: 20161212030953) do
     t.datetime "updated_at",    null: false
     t.integer  "boss_id"
     t.integer  "assistance_id"
+    t.integer  "worker_id"
   end
 
   add_index "reports", ["assistance_id"], name: "index_reports_on_assistance_id", using: :btree
   add_index "reports", ["boss_id"], name: "index_reports_on_boss_id", using: :btree
+  add_index "reports", ["worker_id"], name: "index_reports_on_worker_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -76,8 +78,6 @@ ActiveRecord::Schema.define(version: 20161212030953) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.string   "name"
-    t.string   "permission_level"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "worker_id"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20161212030953) do
   add_foreign_key "equips", "bosses"
   add_foreign_key "reports", "assistances"
   add_foreign_key "reports", "bosses"
+  add_foreign_key "reports", "workers"
   add_foreign_key "users", "workers"
   add_foreign_key "workers", "bosses"
 end
