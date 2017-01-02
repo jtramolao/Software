@@ -5,6 +5,8 @@ class BossesController < ApplicationController
 
  def index
     @bosses = Boss.all
+ 
+
   end
 
   # GET /equips/1
@@ -12,6 +14,7 @@ class BossesController < ApplicationController
   def show
 
     @boss = Boss.find(params[:id])
+    @equips = Equip.where(boss_id: @boss.id)
   end
 
   # GET /equips/new

@@ -23,7 +23,21 @@
           <tr>
             <td><%= link_to equip.nombre, equip %></td>
             <td><%= equip.especialidad %></td>
-            <td><%= equip.boss.nombre %></td>
+
+           <td> <% unless equip.boss.nil? %>
+
+             <%= equip.boss.nombre %>
+
+            <% else %>
+
+            No hay Jefe
+
+            <%end%>
+
+          </td>
+
+
+
             <td><%= link_to "Eliminar", equip, method: :delete,class:"waves-effect waves-light btn" %></td>
           </tr>
 

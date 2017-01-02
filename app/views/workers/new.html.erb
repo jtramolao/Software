@@ -63,7 +63,7 @@
 
                  <div class="row">
             <div class="input-field col s12">
-               <i class="material-icons prefix">work</i>
+               <i class="material-icons prefix">email</i>
             
               <label for="email">Correo</label>
                <%=f.text_field :email %>
@@ -73,7 +73,7 @@
 
 
               <div class="input-field col s12">
-              <i class="material-icons prefix">email</i>
+              <i class="material-icons prefix">work</i>
                     <%= f.label :equip_id, "Seleccione el Equipo" %><br />
           <% equ_array = Equip.all.map { |equ| [equ.nombre, equ.id] } %>
            <%= f.select :equip_id, options_for_select(equ_array, @worker.equip_id) %>

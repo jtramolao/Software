@@ -52,6 +52,38 @@
 			<div class="clear"></div>
 		</section>
 		
+		<section>
+			<div class="sectionTitle">
+				<h1>Equipos</h1>
+			</div>
+			
+			<div class="sectionContent">
+
+
+            <% if @boss.equips.nil? %>
+
+          <h2><%=No tiene Equipos Asociados%></h2>
+
+            <%end%>
+
+            <%else%>
+
+           
+            
+
+            <% @equips.each do |equip| %>
+
+            <h2><%= equip.nombre %></h2>
+
+
+
+          <%end%>
+
+				
+			
+			</div>
+			<div class="clear"></div>
+		</section>
 		
 
 		

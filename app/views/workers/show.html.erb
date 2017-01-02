@@ -19,7 +19,22 @@
 		
 		<div id="name">
 			<h1 class="quickFade delayTwo"><%= @worker.nombre %></h1>
-			<h2 class="quickFade delayThree"><%=@worker.equip.nombre %></h2>
+
+
+		   <% unless @worker.equip.nil? %>
+
+            <h2 class="quickFade delayThree"><%=@worker.equip.nombre %></h2>
+
+
+            <%else%>
+
+
+            No Tiene Grupo 
+
+            <%end%>
+
+         
+			
 		</div>
 		
 		<div id="contactDetails" class="quickFade delayFour">
@@ -68,7 +83,19 @@
 
 			<div class="sectionContent">
 
-			<h2><%=@worker.equip.boss.nombre %></h2>
+ 
+  <% unless @worker.equip.nil? %>
+
+            <h2 class="quickFade delayThree"><%=@worker.equip.nombre %></h2>
+
+            <%else%>
+
+
+            <h2>No Tiene Jefe Asociado</h2>
+
+
+            <%end%>
+
 			
 			</div>
 
