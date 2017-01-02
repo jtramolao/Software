@@ -10,6 +10,8 @@ def index
 
 	@workers = @search.result
 
+	
+
 	@assistance = Assistance.new
 
 end
@@ -38,6 +40,8 @@ end
    def show
 
    @worker = Worker.find(params[:id])
+
+
    @assistance = Assistance.new
 
    end
@@ -104,7 +108,7 @@ end
 		
 	end
 	def worker_params
-		params.require(:worker).permit(:nombre,:rut,:direccion,:email,:telefono,:equipo,:jefe)
+		params.require(:worker).permit(:nombre,:rut,:direccion,:email,:telefono,:equip_id)
 	end
 
 

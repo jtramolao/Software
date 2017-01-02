@@ -32,7 +32,7 @@
 </th>
               <th> <%= f.label :rut_cont, "Rut" %><%= f.search_field :rut_cont %>
 </th>
-              <th> <%= f.label :equipo_cont, "Equipo" %><%= f.search_field :equipo_cont %></th>
+              
               <th> <%= f.submit "Buscar" , class:"waves-effect waves-light btn" %></th>
 
 
@@ -53,7 +53,8 @@
           <tr>
             <td><%= link_to worker.nombre, worker %></td>
             <td><%= worker.rut %></td>
-            <td><%= worker.equipo %></td>
+            <td><%= worker.equip.nombre %></td>
+           
             <td><%= link_to "Eliminar", worker, method: :delete,class:"waves-effect waves-light btn" %></td>
           </tr>
 
