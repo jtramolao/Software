@@ -22,6 +22,13 @@ class BossesController < ApplicationController
     @boss = Boss.new
   end
 
+
+  def edit
+
+    @boss = Boss.find(params[:id])
+
+  end
+
 def create
     @boss = Boss.new(boss_params)
 
@@ -36,6 +43,8 @@ def create
     end
   end
 
+
+
    def destroy
   
 
@@ -43,6 +52,19 @@ def create
   @boss.destroy #destroy elimina el objeto de la bd
   redirect_to bosses_path
   end
+
+def update
+
+    
+  @boss = Boss.find(params[:id])
+  if @boss.update(boss_params)
+        redirect_to @boss
+    else
+      render :edit
+    end
+
+end
+
 
 
 

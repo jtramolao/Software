@@ -6,7 +6,7 @@
 
 </head>
 <body id="top">
-<div id="cv"  >
+<div id="cv1"  >
 	<div class="mainDetails">
 		
 		<div id="name">
@@ -91,7 +91,19 @@
 		
 	</div>
 
+<%= button_to "Editar", edit_boss_path(@boss),
+      :class => "waves-effect waves-light btn", :method => :get %>
     
 
+
+</div>
+
+     <div class="row">
+
+     <div class="col s12" style="color: #FFBA22">
+
+<%= link_to 'Atras', bosses_path , class:"btn center-align"%>
+
+</div>
 
 </div>

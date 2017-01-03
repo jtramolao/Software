@@ -1,19 +1,113 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @equip.nombre %>
-</p>
 
-<p>
-  <strong>Especialidad:</strong>
-  <%= @equip.especialidad %>
-</p>
+<meta charset="UTF-8"> 
 
-<p>
-  <strong>Boss:</strong>
-  <%= @equip.boss %>
-</p>
+<link type="text/css" rel="stylesheet" href="styleShow.css">
+<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
 
-<%= link_to 'Edit', edit_equip_path(@equip) %> |
-<%= link_to 'Back', equips_path %>
+
+</head>
+<body id="top">
+<div id="cv1"  >
+	<div class="mainDetails">
+		
+		<div id="name">
+			<h1 class="quickFade delayTwo"><%= @equip.nombre %></h1>
+	
+		</div>
+		
+		<div id="contactDetails" class="quickFade delayFour">
+			<ul>
+				<li>Email: <%= @equip.nombre %>@gmail.com</li>
+				
+				<li>Telefono: <%= @equip.boss.telefono %></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div id="mainArea" class="quickFade delayFive">
+		<section>
+			<article>
+				<div class="sectionTitle">
+					<h1>Jefe</h1>
+				</div>
+				
+				<div class="sectionContent">
+					<h2> <%= @equip.boss.nombre %></h2>
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Trabajadores</h1>
+			</div>
+			
+			<div class="sectionContent">
+
+				 <% @workers.each do |worker| %>
+
+                       <h2><%= worker.nombre %>  - <%= worker.rut %>  </h2>
+
+				
+					<%end%>
+					
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Comentarios</h1>
+			</div>
+			
+			<div class="sectionContent">
+
+
+
+          <h2>No tiene Comentarios</h2>
+
+          
+           
+ 				
+			
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+
+		
+		
+		
+	</div>
+
+<%= button_to "Editar", edit_equip_path(@equip),
+      :class => "waves-effect waves-light btn", :method => :get %>
+    
+
+
+</div>
+
+     <div class="row">
+
+     <div class="col s12" style="color: #FFBA22">
+
+<%= link_to 'Atras', equips_path , class:"btn center-align"%>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

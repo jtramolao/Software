@@ -13,6 +13,8 @@
 
 
 </head>
+
+
 <body id="top">
 <div id="cv"  >
 	<div class="mainDetails">
@@ -86,7 +88,7 @@
  
   <% unless @worker.equip.nil? %>
 
-            <h2 class="quickFade delayThree"><%=@worker.equip.nombre %></h2>
+            <h2 class="quickFade delayThree"><%=@worker.equip.boss.nombre %></h2>
 
             <%else%>
 

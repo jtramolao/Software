@@ -10,6 +10,11 @@ class EquipsController < ApplicationController
   # GET /equips/1
   # GET /equips/1.json
   def show
+
+    @equip = Equip.find(params[:id])
+    @workers = Worker.where(equip_id: @equip.id)
+
+
   end
 
   # GET /equips/new
