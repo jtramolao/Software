@@ -1,11 +1,15 @@
 class AssistancesController < ApplicationController
-before_action :set_worker
+  before_action :authenticate_user!
+  before_action :set_worker
 
 
 def index
     @assistances = Assistance.all
 
 end
+
+
+
 
 
 def destroy

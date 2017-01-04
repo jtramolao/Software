@@ -13,13 +13,30 @@
 
 
 </head>
+
+
 <body id="top">
 <div id="cv"  >
 	<div class="mainDetails">
 		
 		<div id="name">
 			<h1 class="quickFade delayTwo"><%= @worker.nombre %></h1>
-			<h2 class="quickFade delayThree"><%=@worker.equipo %></h2>
+
+
+		   <% unless @worker.equip.nil? %>
+
+            <h2 class="quickFade delayThree"><%=@worker.equip.nombre %></h2>
+
+
+            <%else%>
+
+
+            No Tiene Grupo 
+
+            <%end%>
+
+         
+			
 		</div>
 		
 		<div id="contactDetails" class="quickFade delayFour">
@@ -68,7 +85,19 @@
 
 			<div class="sectionContent">
 
-			<h2><%=@worker.jefe %></h2>
+ 
+  <% unless @worker.equip.nil? %>
+
+            <h2 class="quickFade delayThree"><%=@worker.equip.boss.nombre %></h2>
+
+            <%else%>
+
+
+            <h2>No Tiene Jefe Asociado</h2>
+
+
+            <%end%>
+
 			
 			</div>
 
@@ -106,7 +135,7 @@
 <table class="highlight">
         <thead>
           <tr>
-              <th data-field="id">Asisitio</th>
+              <th data-field="id">Asistencia</th>
               <th data-field="name">Fecha</th
           </tr>
         </thead>
@@ -120,15 +149,15 @@
           <tr>
           	<% if assistance.asistio==false %>
 
-            <td><%="Asistio"%></td>
+            <td> <%= image_tag("Ticket_verde.png", :alt => "rss feed",size: "25") %></td>
 
             <%else%>
 
-            <td><%="Falto"%></td>
+            <td><%= image_tag("Ticket_rojo.svg", :alt => "rss feed",size: "25") %></td>
 
             <%end%>
         
-            <td><%= assistance.fecha %></td>
+            <td> <%= assistance.fecha.strftime("%b %d, %Y") %></td>
       
 
 
@@ -138,6 +167,8 @@
           </tr>
 
         </tbody>
+
+
 
 
 

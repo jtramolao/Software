@@ -1,14 +1,26 @@
 class WorkersController < ApplicationController
+before_action :authenticate_user!
 
 
 #GET /workers
+
 def index
 
-	@workers = Worker.all
+	 @search = Worker.search(params[:q])
+
+	@workers = @search.result
+
+	
+
 	@assistance = Assistance.new
 
 end
 
+
+def search
+  index
+  render :index
+end
 
 
 def new
@@ -28,6 +40,8 @@ end
    def show
 
    @worker = Worker.find(params[:id])
+
+
    @assistance = Assistance.new
 
    end
@@ -89,9 +103,15 @@ end
 	
 
 	private
-	def worker_params
-		params.require(:worker).permit(:nombre,:rut,:direccion,:email,:telefono,:equipo,:jefe)
+	def validate_user
+		redirect_to new_user_session_path, notice: "Debes iniciar sesion"
+		
 	end
+	def worker_params
+		params.require(:worker).permit(:nombre,:rut,:direccion,:email,:telefono,:equip_id)
+	end
+
+
 
 	
 

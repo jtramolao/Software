@@ -2,6 +2,13 @@
 .clear {clear: both;}
 
 
+
+body {
+	background: #f3f3f3;
+
+}
+
+
 #tabla{
 	float :left;
 	
@@ -29,10 +36,22 @@ p {
 	float :left;
 }
 
+#cv1 {
+	padding: 25px 35px;
+	width: 90%;
+	max-width: 800px;
+	background: #f3f3f3;
+	margin: 30px auto;
+
+}
+
+
+
+
 .mainDetails {
 	padding: 25px 35px;
 	border-bottom: 2px solid #cf8a05;
-	background: #ededed;
+	background: #f3f3f3;
 }
 
 #name h1 {
