@@ -26,34 +26,16 @@
         </thead>
 
 
-         <% @assistances.each do |assistance| %>
+         <% @workers.each do |worker| %>
 
        <tbody>
           <tr>
-            <td><%= assistance.worker.nombre %></td>
-            <td><% if assistance.asistio==false %>
-
-            <%= image_tag("Ticket_verde.png", :alt => "rss feed",size: "25") %>
-
-            <%else%>
-
-            <%= image_tag("Ticket_rojo.svg", :alt => "rss feed",size: "25") %>
-
-            <%end%>
-        
-          
+            <td><%= worker.nombre %></td>
+  
 
 
 
-
-
-          </td>
-
-
-            <td><%= assistance.fecha.strftime("%B %d, %Y") %></td>
-
-         
-           
+          <td> <%= render 'assistances/form' %></td>           
           </tr>
 
         </tbody>

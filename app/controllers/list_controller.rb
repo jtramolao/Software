@@ -4,8 +4,12 @@ class ListController < ApplicationController
 
   def index
 
-  	@search = Assistance.search(params[:q])
-  	@assistances = @search.result
+
+
+    @workers = Worker.all
+  	@assistances = Assistance.all
+  	@assistance = Assistance.new
+
     
 
   end
