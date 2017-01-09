@@ -14,11 +14,7 @@
 
 
 <%= form_for(@boss) do |f| %>
-    <% @boss.errors.full_messages.each do |message| %>
-      <div class="be-red white top-space">
-           *<%= message %>
-      </div>
-    <%end%>
+   
 
 
    <div class="container">
@@ -31,6 +27,14 @@
               <h5 class="center login-title" style="color: #FFBA22">Editar Jefe</h5>
             </div>
           </div>
+
+              <% @boss.errors.full_messages.each do |message| %>
+              <div class="deep-orange accent-2 top-space font-size-new white ">
+              ERROR : <%= message %>
+              </div>
+             <%end%>
+
+
 
 
 

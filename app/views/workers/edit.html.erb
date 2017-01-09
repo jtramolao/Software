@@ -14,12 +14,7 @@
 
 
 <%= form_for(@worker) do |f| %>
-    <% @worker.errors.full_messages.each do |message| %>
-      <div class="be-red white top-space">
-           *<%= message %>
-      </div>
-    <%end%>
-
+ 
 
    <div class="container">
     <div class="row">
@@ -31,6 +26,14 @@
               <h5 class="center login-title" style="color: #FFBA22">Agregar Trabajador</h5>
             </div>
           </div>
+
+              <% @worker.errors.full_messages.each do |message| %>
+      <div class="deep-orange accent-2 top-space font-size-new white ">
+           ERROR : <%= message %>
+      </div>
+    <%end%>
+
+
 
 
 

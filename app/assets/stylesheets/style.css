@@ -14,6 +14,24 @@
 
 }
 
+.be-red {
+	background-color: #82A0F8;
+}
+
+.top-space{
+	margin-top:1em;
+}
+
+.font-size-new{
+	font-size:1em;
+
+}
+
+.white{
+	color: white;
+}
+
+
 
 .font-size-fecha{
 	font-size:2.0em;
