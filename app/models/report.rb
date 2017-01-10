@@ -1,3 +1,4 @@
 class Report < ActiveRecord::Base
-	has_many :assistances
+	has_and_belongs_to_many :workers
+
 end

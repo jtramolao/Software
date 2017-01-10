@@ -16,6 +16,5 @@ class ReportsController < ApplicationController
 		params.require(:report).permit(:fecha,:bonos,:boss_id,:worker_id)
 		
 	end
-	end
 
 end

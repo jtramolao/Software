@@ -14,7 +14,7 @@ class Worker < ActiveRecord::Base
 
 
 	
-	belongs_to :report
+	has_and_belongs_to_many :reports
 	has_many :assistances, dependent: :destroy
 	belongs_to :equip
 
