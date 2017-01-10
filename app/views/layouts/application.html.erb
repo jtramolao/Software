@@ -78,15 +78,23 @@
               </ul>
             </div>
           </li>
-      
-            <li>
+          <li>
+            <a class="collapsible-header">Personal futuro<i class="small material-icons">person_pin</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><%= link_to "Ver contactos disponibles",contacts_path(@contact) %></li>
+              </ul>
+            </div>
+          </li>
 
+            <li>
               <ul>
                 <li>
                   <%= link_to "Crear Cuenta", new_user_registration_path %></li>
               </ul>
           </li>
-        <li>
+
+          <li>
               <ul>
                 <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
               </ul>

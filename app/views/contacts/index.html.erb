@@ -1,0 +1,28 @@
+<h1>Contactos disponibles</h1>
+
+<table class="striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Rut</th>
+      <th>Fono</th>
+      <th>Email</th>
+      <th>Comentarios</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.nombre %></td>
+        <td><%= contact.rut %></td>
+        <td><%= contact.fono %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.comentario %></td>
+        <td><%= link_to 'Eliminar', contact, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Volver', welcome_index_path %>

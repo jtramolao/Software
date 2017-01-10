@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170102033922) do
+ActiveRecord::Schema.define(version: 20170106133035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(version: 20170102033922) do
 
   add_index "bosses", ["user_id"], name: "index_bosses_on_user_id", using: :btree
 
+  create_table "contacts", force: :cascade do |t|
+    t.string   "nombre"
+    t.integer  "rut"
+    t.integer  "fono"
+    t.string   "email"
+    t.text     "comentario"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "equips", force: :cascade do |t|
     t.string   "nombre"
     t.string   "especialidad"
@@ -54,8 +64,6 @@ ActiveRecord::Schema.define(version: 20170102033922) do
   create_table "reports", force: :cascade do |t|
     t.date     "fecha"
     t.integer  "bonos"
-    t.integer  "descuentos"
-    t.string   "resumen"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "boss_id"
@@ -76,8 +84,6 @@ ActiveRecord::Schema.define(version: 20170102033922) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.string   "name"
-    t.string   "permission_level"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "worker_id"

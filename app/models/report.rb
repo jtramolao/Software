@@ -1,3 +1,3 @@
 class Report < ActiveRecord::Base
-	has_many :workers
+	has_many :assistances
 end

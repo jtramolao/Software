@@ -17,10 +17,9 @@
           <h5 class="header col s12 light">Web de control de asistencia </h5>
         </div>
         <div class="row center">
-          <a class="btn-large waves-effect waves-light blue-grey darken-3">Empieza a trabajar con nostros!</a>
+            <%= button_to "Trabaja con nosotros", new_contact_path,
+      class:"waves-effect waves-teal", :method => :get %>
         </div>
-        <br><br>
-
       </div>
     </div>
     <div class="parallax"><%= image_tag("gasfiteria2.jpg", :alt => "rss feed") %></div>
