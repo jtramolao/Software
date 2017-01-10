@@ -1,3 +1,4 @@
+
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -11,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106133035) do
+ActiveRecord::Schema.define(version: 20170109215140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,26 +31,16 @@ ActiveRecord::Schema.define(version: 20170106133035) do
 
   create_table "bosses", force: :cascade do |t|
     t.string   "nombre"
-    t.integer  "rut"
     t.string   "telefono"
     t.string   "direccion"
     t.string   "mail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.string   "rut"
   end
 
   add_index "bosses", ["user_id"], name: "index_bosses_on_user_id", using: :btree
-
-  create_table "contacts", force: :cascade do |t|
-    t.string   "nombre"
-    t.integer  "rut"
-    t.integer  "fono"
-    t.string   "email"
-    t.text     "comentario"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "equips", force: :cascade do |t|
     t.string   "nombre"
@@ -64,6 +55,8 @@ ActiveRecord::Schema.define(version: 20170106133035) do
   create_table "reports", force: :cascade do |t|
     t.date     "fecha"
     t.integer  "bonos"
+    t.integer  "descuentos"
+    t.string   "resumen"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "boss_id"
@@ -84,6 +77,8 @@ ActiveRecord::Schema.define(version: 20170106133035) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "name"
+    t.string   "permission_level"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "worker_id"
@@ -95,13 +90,13 @@ ActiveRecord::Schema.define(version: 20170106133035) do
 
   create_table "workers", force: :cascade do |t|
     t.string   "nombre"
-    t.integer  "rut"
     t.text     "direccion"
     t.string   "telefono"
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "equip_id"
+    t.string   "rut"
   end
 
   add_index "workers", ["equip_id"], name: "index_workers_on_equip_id", using: :btree
