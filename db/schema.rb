@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110140310) do
+ActiveRecord::Schema.define(version: 20170110144554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,22 @@ ActiveRecord::Schema.define(version: 20170110140310) do
 
   create_table "reports_workers", force: :cascade do |t|
   end
+
+  create_table "summaries", force: :cascade do |t|
+    t.date     "fecha"
+    t.integer  "resumen"
+    t.integer  "worker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "summaries_workers", id: false, force: :cascade do |t|
+    t.integer "summary_id"
+    t.integer "worker_id"
+  end
+
+  add_index "summaries_workers", ["summary_id"], name: "index_summaries_workers_on_summary_id", using: :btree
+  add_index "summaries_workers", ["worker_id"], name: "index_summaries_workers_on_worker_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

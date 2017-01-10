@@ -6,6 +6,10 @@ class ReportsController < ApplicationController
 		@report = Report.find(params[:id])
 	end
 	def create
+		if params[:report][:worker_id]
+			params[:report][:worker_id] = params[:report][:worker_ids].map{|k, v| k}
+			
+		end
 		@report = Report.new(report_params)
 	end
 	def new

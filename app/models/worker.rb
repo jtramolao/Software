@@ -13,8 +13,7 @@ class Worker < ActiveRecord::Base
 	validates :email, email_format: { message: "no es correcto" } 
 
 
-	
-	has_and_belongs_to_many :reports
+	has_and_belongs_to_many :summaries
 	has_many :assistances, dependent: :destroy
 	belongs_to :equip
 
