@@ -8,7 +8,7 @@ class ListController < ApplicationController
 
     @workers = Worker.all
   	@assistances = Assistance.all
-  	@assistance = Assistance.new
+  	
 
     
 

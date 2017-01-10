@@ -9,9 +9,16 @@
 
 
 
+
+
 #font-paralex{
   font-family: arial;
 
+}
+
+.form-asis{
+	padding: 2em;
+	background: #f3f3f3;
 }
 
 .be-red {

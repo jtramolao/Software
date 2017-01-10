@@ -14,18 +14,21 @@
     </div>
   <% end %>
 
+<div class="form-asis">
  
 
  <%= f.label :asistio ,"Falto" ,class: "label-size"%>
     <%= f.check_box :asistio  %>
 
        <%= f.label :fecha ,"Marcar si no asistio"%>
-    <%= f.date_select :fecha %> 
+    <%= f.date_select :fecha ,class: "browser-default"%> 
 
 
 
   <a class="waves-effect waves-light btn"><div class="actions" >
     <%= f.submit "Crear Asistencia"%> </div></a>
+
+  </div>
 
 
 
