@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 20170110140310) do
   create_table "reports", force: :cascade do |t|
     t.date     "fecha"
     t.integer  "bonos"
+    t.integer  "descuentos"
+    t.string   "resumen"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "worker_id"
@@ -71,8 +73,13 @@ ActiveRecord::Schema.define(version: 20170110140310) do
 
   add_index "reports", ["worker_id"], name: "index_reports_on_worker_id", using: :btree
 
-  create_table "reports_workers", force: :cascade do |t|
+  create_table "reports_workers", id: false, force: :cascade do |t|
+    t.integer "report_id"
+    t.integer "worker_id"
   end
+
+  add_index "reports_workers", ["report_id"], name: "index_reports_workers_on_report_id", using: :btree
+  add_index "reports_workers", ["worker_id"], name: "index_reports_workers_on_worker_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -85,6 +92,8 @@ ActiveRecord::Schema.define(version: 20170110140310) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "name"
+    t.string   "permission_level"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "worker_id"
