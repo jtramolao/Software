@@ -31,8 +31,18 @@
 
     <% p=@worker %> 
     <% g=((p.assistances.count-p.assistances.where(asistio: true).count)*100) %>
-    <% l=Float(g/p.assistances.count) %>
-     <%= f.hidden_field :porcentaje , value: l  %>
+
+    <% if (p.assistances.count>0) %>
+    
+    <%  l=Float(g/p.assistances.count) %>
+    <%= f.hidden_field :porcentaje , value: l  %>
+
+    <% else %>
+   
+   <%= f.hidden_field :porcentaje , value: 0  %>
+
+
+    <%end%>
 
     <% k=p.assistances.where(excepcion: true).count %>
     <%= f.hidden_field :excepciones , value: p.assistances.where(excepcion: true).count  %>
