@@ -1,5 +1,7 @@
 class ReportsController < ApplicationController
 	def index
+
+		@workers=Worker.all
 		
 	end
 	def show
