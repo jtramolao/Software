@@ -1,28 +1,42 @@
-<h1>Contactos disponibles</h1>
+
+
+
+
+
 
 <table class="striped">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Rut</th>
-      <th>Fono</th>
-      <th>Email</th>
-      <th>Comentarios</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <thead>
+          
+          <tr>
+              <th data-field="id"><i class="material-icons prefix">account_circle</i>Nombre</th>
+              <th data-field="name"><i class="material-icons prefix">picture_in_picture</i>Rut</th>
+              <th data-field="price"><i class="material-icons prefix">phone</i>Fono</th>
+              <th data-field="id"><i class="material-icons prefix">email</i>Email</th>
+              <th data-field="id"><i class="material-icons prefix">mode_edit</i>Comentario</th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @contacts.each do |contact| %>
-      <tr>
+
+
+<% @contacts.each do |contact| %>
+
+
+       <tbody>
+          <tr>
         <td><%= contact.nombre %></td>
         <td><%= contact.rut %></td>
         <td><%= contact.fono %></td>
         <td><%= contact.email %></td>
         <td><%= contact.comentario %></td>
-        <td><%= link_to 'Eliminar', contact, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'Volver', welcome_index_path %>
+        <td><%= link_to 'Eliminar', contact, method: :delete, data: { confirm: 'Esta seguro?' } ,class:"waves-effect waves-light btn" %></td>
+          </tr>
+
+        </tbody>
+
+
+
+<%end%>
+
+      </table>
+
+      <%= link_to 'Volver', welcome_index_path %>

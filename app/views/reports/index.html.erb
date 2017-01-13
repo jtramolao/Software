@@ -1,29 +1,37 @@
-<% @workers.each do |worker| %>
+<p id="notice"><%= notice %></p>
 
+<h1>Listing Reports</h1>
 
-       <tbody>
-          <tr>
-            <td><%= link_to worker.nombre, @worker.report %></td>
-            <td><%= worker.rut %></td>
-             <td> <% unless worker.equip.nil? %>
-
-             <%= worker.equip.nombre %>
-
-            <% else %>
-
-            No Tiene Grupo
-
-            <%end%>
-
-          </td>
-           
-            <td><%= link_to "Eliminar", worker, method: :delete,class:"waves-effect waves-light btn" %></td>
-          </tr>
-
-        </tbody>
+<table>
+  <thead>
+    <tr>
+      <th>BONOS</th>
+      <th>DESCUENTOS</th>
+      <th>DIAS TOTALES</th>
+      <th>DIAS FALTADOS</th>
+      <th>PORCENTAJE</th>
 
 
 
-<%end%>
+     
+    </tr>
+  </thead>
 
-      </table>
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+       
+        <td><%= report.bonos %></td>
+       <td><%= report.descuentos %></td>
+       <td><%= report.diasTotales %></td>
+       <td><%= report.diasFaltados %></td>
+       <td><%= report.porcentaje %></td>
+
+       <tr>
+
+     
+    <% end %>
+  </tbody>
+</table>
+
+<br>

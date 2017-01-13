@@ -15,14 +15,27 @@
   <% end %>
 
 <div class="form-asis">
- 
 
- <%= f.label :asistio ,"Falto" ,class: "label-size"%>
+
+
+ <%= f.label :asistio ,"Marcar Ausencia" ,class: "label-size"%>
     <%= f.check_box :asistio  %>
+     <%= f.label :excepcion,"Excepcion" ,class: "label-size"%>
+    <%= f.check_box :excepcion  %>
+     <%= f.label :horas, "." %>
 
-       <%= f.label :fecha ,"Marcar si no asistio"%>
-    <%= f.date_select :fecha ,class: "browser-default"%> 
+    <div class="col s2">
+      <%= f.label :horas  %>
 
+     <%= f.text_field :horas ,placeholder: "Horas Extras" %>
+
+   </div>
+
+
+       <%= f.label :fecha %>
+    <%= f.date_select :fecha ,class: "browser-default",start_year: 2015,order: [:day, :month, :year]%> 
+
+   
 
 
   <a class="waves-effect waves-light btn"><div class="actions" >

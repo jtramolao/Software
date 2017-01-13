@@ -18,6 +18,20 @@
 body {
 	background-color: #FFF;
 }
+
+.fondorep {
+	background-color: #0B3861;
+}
+
+
+.espaciorep{
+	padding-left: 30px;
+	padding-bottom: 30px;
+}
+.espaciorepx{
+	padding-left: 10px;
+	
+}
  
 .container h1 {
 	font-family: "Lobster", cursive;

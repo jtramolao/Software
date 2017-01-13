@@ -10,12 +10,12 @@ Rails.application.routes.draw do
 
   resources :workers do
     resources :assistances
+    resources :reports
   end
 
 
   resources :bosses
 
-  resources :reports
     
 
 

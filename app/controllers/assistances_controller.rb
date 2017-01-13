@@ -25,6 +25,7 @@ def destroy
 
 def new
     @assistance = Assistance.new
+    @assistance.fun
 
  end
 

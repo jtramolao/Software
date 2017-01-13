@@ -44,6 +44,8 @@ end
 
    @assistance = Assistance.new
 
+   @report = Report.new
+
    end
 
 

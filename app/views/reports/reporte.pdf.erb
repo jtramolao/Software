@@ -5,12 +5,11 @@
 <title>Resume</title>
 <link type="text/css" rel="stylesheet" href="css/blue.css" />
 <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
-<!--[if IE 7]>
-<link href="css/ie7.css" rel="stylesheet" type="text/css" />
-<![endif]-->
-<!--[if IE 6]>
-<link href="css/ie6.css" rel="stylesheet" type="text/css" />
-<![endif]-->
+
+
+
+<%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+
 
 <style>
 
@@ -226,7 +225,7 @@ h2 {
 }
 
 p {
-	font-size: 45px;
+	font-size: 35px;
 	width:500px;
 	margin-left:40px;
 	float:right;	
@@ -1080,13 +1079,8 @@ big {
 
     <!-- Begin Paper -->
     <div id="paper">
-    	  
-        
       
       <div id="paper-mid">
-
-      	     <%= link_to "Descarga PDF",  worker_report_path(format: :pdf),class:"btn-large waves-effect waves-light blue-grey darken-3" %>
-        
 
 
 
@@ -1095,9 +1089,8 @@ big {
 
 
 
-
           <!-- Begin Image -->
-          <%= image_tag("image.jpg", :alt => "rss feed") %>
+          <%= wicked_pdf_image_tag("image.jpg", :alt => "rss feed") %>
           
           <!-- End Image -->
 
@@ -1119,7 +1112,6 @@ big {
 
 
 
-       
        
         <div class="entry espaciorep">
           <h2>TOTAL</h2>
@@ -1146,10 +1138,11 @@ big {
           <p class="espaciorep2"><font color="black"><%= @report.porcentaje %>%</font></p>
         </div>
 
+
      
 
          <div class="entry espaciorep">
-          <h2>CANTIDAD EXCEPCIONES </h2>
+          <h2>EXCEPCIONES </h2>
           <p class="espaciorep2"><font color="black"><%= @report.excepciones %></font></p>
         </div>
 
@@ -1157,7 +1150,7 @@ big {
 
 
       <div class="entry espaciorep">
-          <h2>BONO ASISTENCIA </h2>
+          <h2>BONO </h2>
           <% if @report.bonos==0 %>
           <p class="espaciorep2"><font color="black"><%="No Califica" %></font></p>
           <%else%>
@@ -1190,7 +1183,7 @@ big {
         <div class="entry espaciorep">
           <h2>RESUMEN</h2>
            
-          <div class="content ">
+          
 
 
 
@@ -1209,11 +1202,11 @@ big {
           <tr>
           	<% if assistance.asistio==false %>
 
-            <td> <%= image_tag("Ticket_verde.png", :alt => "rss feed",size: "25") %></td>
+            <td> <%= wicked_pdf_image_tag("Ticket_verde.png", :alt => "rss feed",size: "25") %></td>
 
             <%else%>
 
-            <td><%= image_tag("Ticket_rojo.svg", :alt => "rss feed",size: "25") %></td>
+            <td><%= wicked_pdf_image_tag("Ticket_rojo.svg", :alt => "rss feed",size: "25") %></td>
 
             <%end%>
         
@@ -1227,7 +1220,7 @@ big {
 
 
 
-</div>
+
 
 
 
@@ -1240,11 +1233,8 @@ big {
           <p class="espaciorep6"><font color="black"><%= @report.created_at.to_formatted_s(:long)  %></font></p>
         </div>
           
-        
-          
         </div>
-
-       
+        
         
 
 

@@ -72,7 +72,7 @@
             <a class="collapsible-header">Informes<i class="small material-icons">assignment</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><%= link_to "Crear informe",new_report_path %></li>
+                <li><%= link_to "Crear informe" %></li>
                 <li><a href="#!">Editar</a></li>
                 <li><a href="#!">Buscar</a></li>
               </ul>
@@ -117,8 +117,8 @@
 
 
 <%= yield %>
- <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p> 
+
+ 
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> 
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
