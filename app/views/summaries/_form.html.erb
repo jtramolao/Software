@@ -10,27 +10,57 @@
       </ul>
     </div>
   <% end %>
+          <div class="container">
+          <div class="row">
+              <h5 class="center brand-logo" style="color: #37474f">Nuevo reporte de asistencia</h5>
+          <div >
+          <div class="row">
+              <li>
+              <i class="material-icons prefix">work</i>
+              <%= f.label :equip_id, "Seleccione el Equipo" %><br />
+              <% equ_array = Equip.all.map { |equ| [equ.nombre, equ.id] } %>
 
-  <div class= "field">
-  <%= label_tag 'Trabajadores'%><br>
-  <% for worker in Worker.all do %>
-    <%= check_box_tag "summary[worker_ids][#{worker.id}]", nil, @summary.workers.member?(worker)%><%= worker.nombre%>
-    <% end %>
-  </div>
 
-  <div class="field">
-    <%= f.label :fecha %><br>
-    <%= f.date_select :fecha %>
-  </div>
+              </li>
+              <li>
+                Equipo:
+              </li>
+              <li>
+                <%= f.label :fecha %><br>
+                <%= Time.now.strftime("%d-%m-%y") :fecha %>
+              </li>
+            
+          </div>
+     <table>
+        <thead>
+          <tr>
+              <th data-field="name"><i class="material-icons prefix">account_circle</i>Nombre</th>
+              <th data-field="id"><i class="material-icons prefix">picture_in_picture</i>Rut</th>
+              <th data-field="extra"><i class="material-icons prefix">work</i>Dias Extras</th>
+              <th data-field="faltados"><i class="material-icons prefix">work</i>Dias Ausente</th>
+              <th data-field="faltados"><i class="material-icons prefix">import_export</i>Resumen</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <% for worker in Worker.all do %>
+            <td><%= check_box_tag "summary[worker_ids][#{worker.id}]", nil, @summary.workers.member?(worker)%><%= worker.nombre%></td>  
+          </tr>
+            <% end %>
+        </tbody>
+    </table>
+
   <div class="field">
     <%= f.label :resumen %><br>
     <%= f.number_field :resumen %>
   </div>
-  <div class="field">
-    <%= f.label :worker_id %><br>
-    <%= f.number_field :worker_id %>
-  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar informe"%>
   </div>
 <% end %>
+
+</div>
+</div>
+</div>

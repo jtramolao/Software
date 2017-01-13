@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 <p>
+
 	<b>Trabajadores asociados:</b>
 	<%= @summary.workers.map { |p| p.nombre}.to_sentence %>
 </p>
@@ -17,6 +18,10 @@
   <strong>Worker:</strong>
   <%= @summary.worker_id %>
 </p>
+  <div class="field">
+  <%= label_tag "trabajadores"%>
+  <%= f.collection_check_boxes :worker_ids, Worker.all, :id,:nombre%>
+  </div>
 
 <%= link_to 'Edit', edit_summary_path(@summary) %> |
 <%= link_to 'Back', summaries_path %>
