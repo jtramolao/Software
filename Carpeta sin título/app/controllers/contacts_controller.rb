@@ -29,14 +29,25 @@ class ContactsController < ApplicationController
   def create
     
     @contact = Contact.new(contact_params)
-
-    respond_to do |format|
+    if user_signed_in?
+          respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Tu informacion ha sido guardada, te contactaremos lo mas pronto posible' }
+        format.html { redirect_to @contact, alert: 'Tu informacion ha sido guardada, te contactaremos lo mas pronto posible' }
         format.json { render :show, status: :created, location: @contact }
-      else
+        else
         format.html { render :new }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+          respond_to do |format|
+      if @contact.save
+        format.html { redirect_to welcome_index_url, notice: 'Tu informacion ha sido guardada, te contactaremos lo mas pronto posible' }
+        format.json { render :show, status: :created, location: @contact }
+        else
+        format.html { render :new }
+        format.json { render json: @contact.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

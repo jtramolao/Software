@@ -1,29 +1,45 @@
-<div class="container">
-  <h1>Resumen datos ingresados</h1>
-  <p>
-  <strong>Nombre:</strong>
-  <%= @contact.nombre %>
-</p>
 
-<p>
-  <strong>Rut:</strong>
-  <%= @contact.rut %>
-</p>
+  <div class="container">
+            <div class="row">
+            <div class="blue-grey darken-3">
+              <h5 class="center login-title" style="color: #FFBA22">Resumen datos ingresados
+              </h5>
+            </div>
+          </div>
 
-<p>
+          <div class="row">
+            <div class="col s6">
+               <i class="material-icons prefix">account_circle</i>
+                <strong>Nombre:</strong>
+                <%= @contact.nombre %>
+            </div>  
+            <div class="col s6">
+              <i class="material-icons prefix">picture_in_picture</i>
+                <strong>Rut:</strong>
+                <%= @contact.rut %>
+            </div>            
+          </div>
+
+          <div class="row">
+            <div class="col s6">
+                  <i class="material-icons prefix">email</i>
+                  <strong>Email:</strong>
+                   <%= @contact.email %>
+            </div>  
+            <div class="col s6">
+                <i class="material-icons prefix">phone</i>
   <strong>Fono:</strong>
   <%= @contact.fono %>
-</p>
+            </div>            
+          </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
-
-<p>
-  <strong>Comentario:</strong>
-  <%= @contact.comentario %>
-</p>
+          <div class="row">
+            <div class="col s12">
+              <i class="material-icons prefix">mode_edit</i>
+               <strong>Comentario:</strong>
+                <%= @contact.comentario %>
+            </div>
+          </div>
 
   <div class="row">
     <div class="col s12" style="color: #FFBA22">
