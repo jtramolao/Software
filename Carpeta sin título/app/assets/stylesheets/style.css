@@ -1,0 +1,65 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+
+
+
+
+
+#font-paralex{
+  font-family: arial;
+
+}
+
+.form-asis{
+	padding: 2em;
+	background: #f3f3f3;
+}
+
+.be-red {
+	background-color: #82A0F8;
+}
+
+.top-space{
+	margin-top:1em;
+}
+
+.font-size-new{
+	font-size:1em;
+
+}
+
+.white{
+	color: white;
+}
+
+
+
+.font-size-fecha{
+	font-size:2.0em;
+}
+
+ .label-size{
+ 	font-size:0.9em;
+ 	color: black;
+ }
+
+.hidden{
+  display: none;
+}
+
+.icon-block {
+  padding: 0 15px;/* Custom Stylesheet */
+
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+
+

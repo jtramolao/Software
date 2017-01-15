@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Reports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>BONOS</th>
+      <th>DESCUENTOS</th>
+      <th>DIAS TOTALES</th>
+      <th>DIAS FALTADOS</th>
+      <th>PORCENTAJE</th>
+
+
+
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+       
+        <td><%= report.bonos %></td>
+       <td><%= report.descuentos %></td>
+       <td><%= report.diasTotales %></td>
+       <td><%= report.diasFaltados %></td>
+       <td><%= report.porcentaje %></td>
+
+       <tr>
+
+     
+    <% end %>
+  </tbody>
+</table>
+
+<br>

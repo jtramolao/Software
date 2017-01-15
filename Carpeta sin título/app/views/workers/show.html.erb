@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta charset="UTF-8"> 
+
+<link type="text/css" rel="stylesheet" href="styleShow.css">
+<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+
+<body id="top">
+<div id="cv"  >
+	<div class="mainDetails">
+		
+		<div id="name">
+			<h1 class="quickFade delayTwo"><%= @worker.nombre %></h1>
+
+
+		   <% unless @worker.equip.nil? %>
+
+            <h2 class="quickFade delayThree"><%=@worker.equip.nombre %></h2>
+
+
+            <%else%>
+
+
+            No Tiene Grupo 
+
+            <%end%>
+
+         
+			
+		</div>
+		
+		<div id="contactDetails" class="quickFade delayFour">
+			<ul>
+				<li>Email: <%= @worker.email %></li>
+				
+				<li>Telefono: <%= @worker.telefono %></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div id="mainArea" class="quickFade delayFive">
+		<section>
+			<article>
+				<div class="sectionTitle">
+					<h1>Cedula Identidad</h1>
+				</div>
+				
+				<div class="sectionContent">
+					<h2> <%=@worker.rut %></h2>
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Direccion</h1>
+			</div>
+			
+			<div class="sectionContent">
+				
+					<h2><%=@worker.direccion %></h2>
+					
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Jefe</h1>
+			</div>
+
+			<div class="sectionContent">
+
+ 
+  <% unless @worker.equip.nil? %>
+
+            <h2 class="quickFade delayThree"><%=@worker.equip.boss.nombre %></h2>
+
+            <%else%>
+
+
+            <h2>No Tiene Jefe Asociado</h2>
+
+
+            <%end%>
+
+			
+			</div>
+
+			<div class="clear"></div>
+		</section>
+		
+		
+		
+		
+	</div>
+
+    <%= button_to "Editar", edit_worker_path(@worker),
+      :class => "waves-effect waves-light btn", :method => :get %>
+
+  </br>
+
+      <%= render 'reports/form' %>
+
+
+      <table class="highlight">
+  <thead>
+    <tr>
+      <th>CODIGO REPORTE</th>
+      <th>FECHA</th>
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @worker.reports.each do |report| %>
+      <tr>
+       
+       <td><%= link_to report,worker_report_path(report.worker_id, report.id) %></td>
+       <td><%= report.created_at.to_formatted_s(:long)  %></td>
+        <td><%= link_to "Eliminar", worker_report_path(report.worker_id, report.id), method: :delete,class:"waves-effect waves-light btn" %></td>
+
+       <tr>
+
+     
+    <% end %>
+  </tbody>
+</table>
+
+
+    
+
+
+</div>
+
+
+
+
+<div id="tabla"  >
+
+
+<%= render 'assistances/form' %>
+
+<table class="highlight">
+        <thead>
+          <tr>
+              <th data-field="id">Asistencia</th>
+              <th data-field="name">Fecha</th
+          </tr>
+        </thead>
+
+
+
+<% @worker.assistances.each do |assistance| %>
+
+
+       <tbody>
+          <tr>
+          	<% if assistance.asistio==false %>
+
+            <td> <%= image_tag("Ticket_verde.png", :alt => "rss feed",size: "25") %></td>
+
+            <%else%>
+
+            <td><%= image_tag("Ticket_rojo.svg", :alt => "rss feed",size: "25") %></td>
+
+            <%end%>
+        
+            <td> <%= assistance.fecha.strftime("%b %d, %Y") %></td>
+      
+
+
+            <td ><%= link_to "Eliminar",[assistance.worker, assistance ],method: :delete, class:"waves-effect waves-light btn",data: { confirm: '¿Estas Seguro?' } %> </td>
+
+            
+          </tr>
+
+        </tbody>
+
+
+
+
+
+<%end%>
+
+      </table>
+
+
+
+            
+
+
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+

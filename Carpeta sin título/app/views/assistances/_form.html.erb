@@ -1,0 +1,53 @@
+
+
+
+<%= form_for([@worker,@assistance]) do |f| %>
+  <% if @assistance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@assistance.errors.count, "error") %> prohibited this assistance from being saved:</h2>
+
+      <ul>
+      <% @assistance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="form-asis">
+
+
+
+ <%= f.label :asistio ,"Marcar Ausencia" ,class: "label-size"%>
+    <%= f.check_box :asistio  %>
+     <%= f.label :excepcion,"Excepcion" ,class: "label-size"%>
+    <%= f.check_box :excepcion  %>
+     <%= f.label :horas, "." %>
+
+    <div class="col s2">
+      <%= f.label :horas  %>
+
+     <%= f.text_field :horas ,placeholder: "Horas Extras" %>
+
+   </div>
+
+
+       <%= f.label :fecha %>
+    <%= f.date_select :fecha ,class: "browser-default",start_year: 2015,order: [:day, :month, :year]%> 
+
+   
+
+
+  <a class="waves-effect waves-light btn"><div class="actions" >
+    <%= f.submit "Crear Asistencia"%> </div></a>
+
+  </div>
+
+
+
+
+
+
+
+<% end %>
+

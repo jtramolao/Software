@@ -1,0 +1,132 @@
+<!Doctype html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+<title>INSAC</title>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+<nav class="blue-grey darken-3">
+  <div class="nav-wrapper container"><span style="color: #FFBA22"><%= link_to "INSAC", welcome_index_path , class:"brand-logo right" %></span>
+
+
+    <ul id="slide-out" class="side-nav">
+  
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+
+
+          <%if user_signed_in?%>
+                    <li>
+            <a class="collapsible-header">Trabajadores<i class="small material-icons">perm_identity</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><%= link_to "Ingresar", new_worker_path(@worker) %></li>
+                <li><%= link_to "Editar/Eliminar", workers_path(@worker) %></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a class="collapsible-header">Asistencia<i class="small material-icons">today</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#!">Ingresar</a></li>
+                <li><a href="#!">Editar</a></li>
+                <li><%= link_to "Lista Completa", list_index_path %></li>
+              </ul>
+            </div>
+          </li>
+           <li>
+            <a class="collapsible-header">Jefes<i class="small material-icons">person_pin</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><%= link_to "Agregar", new_boss_path(@boss) %></li>
+                
+                <li><%= link_to "Editar/Eliminar ", bosses_path(@boss) %></li>
+              </ul>
+            </div>
+          </li>
+
+           <li>
+            <a class="collapsible-header">Equipos<i class="small material-icons">person_pin</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><%= link_to "Agregar ", new_equip_path(@equip) %></li>
+                
+                <li><%= link_to "Editar/Eliminar ", equips_path(@equip) %></li>
+              </ul>
+            </div>
+          </li>
+
+
+
+
+          <li>
+            <a class="collapsible-header">Informes<i class="small material-icons">assignment</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><%= link_to "Crear informe" %></li>
+                <li><a href="#!">Editar</a></li>
+                <li><a href="#!">Buscar</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a class="collapsible-header">Personal Futuro<i class="small material-icons">person_pin</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><%= link_to "Ver contactos disponibles",contacts_path(@contact) %></li>
+              </ul>
+            </div>
+          </li>
+
+
+
+          <li>
+              <ul>
+                <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
+              </ul>
+          </li>
+          <%else%>
+                  <li>
+              <ul>
+                <li><%= link_to "Iniciar Sesion", new_user_session_path %></li>
+              </ul>
+          </li>
+          <%end%>
+        </ul>
+      </li>
+    </ul>
+    <a href="#!" data-activates="slide-out" class="button-collapse show-on-large"><i style="color: #FFBA22 ">Menu </i></a><i class="small material-icons">assignment</i>
+          
+  </div>
+</nav>
+  
+
+
+<%= yield %>
+
+ 
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> 
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script>
+    $(document).ready(function(){
+      $('dropdown-button').dropdown();
+    });
+  </script>
+
+
+
+
+
+
+</body>
+</html>

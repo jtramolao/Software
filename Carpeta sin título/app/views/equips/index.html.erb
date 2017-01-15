@@ -1,0 +1,51 @@
+
+
+
+
+<table class="highlight">
+        <thead>
+
+          <tr>
+              <th data-field="id"><i class="material-icons prefix">account_circle</i>Equipo</th>
+            
+              <th data-field="price"><i class="material-icons prefix">work</i>Especialidad</th>
+                <th data-field="name"><i class="material-icons prefix">picture_in_picture</i>Jefe</th>
+          </tr>
+        </thead>
+
+
+
+<% @equips.each do |equip| %>
+
+
+       <tbody>
+          <tr>
+            <td><%= link_to equip.nombre, equip %></td>
+            <td><%= equip.especialidad %></td>
+
+           <td> <% unless equip.boss.nil? %>
+
+             <%= equip.boss.nombre %>
+
+            <% else %>
+
+            No hay Jefe
+
+            <%end%>
+
+          </td>
+
+
+
+            <td><%= link_to "Eliminar", equip, method: :delete,class:"waves-effect waves-light btn" %></td>
+          </tr>
+
+        </tbody>
+
+
+
+
+<%end%>
+
+      </table>
+
