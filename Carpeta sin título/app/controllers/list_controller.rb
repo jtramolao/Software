@@ -15,6 +15,15 @@ class ListController < ApplicationController
   end
 
 
+  def index2
+
+  	@reports = Report.all
+
+
+
+  end
+
+
 
 
 end

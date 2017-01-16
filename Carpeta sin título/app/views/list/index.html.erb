@@ -26,11 +26,11 @@
         </thead>
 
 
-         <% @assistances.each do |assistance| %>
+         <% @assistances.order("fecha desc").each do |assistance| %>
 
        <tbody>
           <tr>
-            <td><%= assistance.worker.nombre %></td>
+            <td><%= assistance.worker %></td>
             <td><% if assistance.asistio==false %>
 
             <%= image_tag("Ticket_verde.png", :alt => "rss feed",size: "25") %>

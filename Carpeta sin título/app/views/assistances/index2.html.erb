@@ -1,0 +1,68 @@
+<html>
+<body>
+  <head>
+
+  
+
+
+<body>
+
+
+
+<p id="notice"><%= notice %></p>
+
+
+
+
+    <table class="highlight centered bordered">
+        <thead>
+  
+          <tr>
+              <th data-field="id"> <i class="material-icons prefix">account_circle</i> Nombre</th>
+              <th data-field="name"> <i class="material-icons prefix">done</i>Asistencia</th>
+              <th data-field="price"><i class="material-icons prefix">schedule</i>Fecha</th>
+          </tr>
+        </thead>
+
+
+         <% @assistances.order("fecha desc").each do |assistance| %>
+
+       <tbody>
+          <tr>
+            <td><%= assistance.worker %></td>
+            <td><% if assistance.asistio==false %>
+
+            <%= image_tag("Ticket_verde.png", :alt => "rss feed",size: "25") %>
+
+            <%else%>
+
+            <%= image_tag("Ticket_rojo.svg", :alt => "rss feed",size: "25") %>
+
+            <%end%>
+        
+          
+
+
+
+
+
+          </td>
+
+
+            <td><%= assistance.fecha.strftime("%B %d, %Y") %></td>
+
+         
+           
+          </tr>
+
+        </tbody>
+
+
+
+<%end%>
+
+      </table>
+
+
+    </body>
+    </html>

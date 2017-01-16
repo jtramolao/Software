@@ -9,6 +9,12 @@ def index
 end
 
 
+def index2
+
+   @assistances = Assistance.all
+
+end
+
 
 
 

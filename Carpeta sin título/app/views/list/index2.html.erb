@@ -1,0 +1,56 @@
+<html>
+<body>
+  <head>
+
+  
+
+
+<body>
+
+
+
+<p id="notice"><%= notice %></p>
+
+
+
+
+    <table class="highlight centered bordered">
+        <thead>
+  
+          <tr>
+              <th data-field="id"> <i class="material-icons prefix">account_circle</i> Nombre</th>
+              <th data-field="name"> <i class="material-icons prefix">done</i>Asistencia</th>
+              <th data-field="price"><i class="material-icons prefix">schedule</i>Fecha</th>
+          </tr>
+        </thead>
+
+
+         <% @reports.each do |report| %>
+
+       <tbody>
+          <tr>
+            <td><%= report.worker %></td>
+            <td><%= report.resumen %></td>
+
+
+
+
+        
+
+            <td><%= report.created_at.strftime("%B %d, %Y") %></td>
+
+         
+           
+          </tr>
+
+        </tbody>
+
+
+
+<%end%>
+
+      </table>
+
+
+    </body>
+    </html>

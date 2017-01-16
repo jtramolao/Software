@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :contacts
   resources :equips
   get 'list/index'
-
+  get 'list/index2'
   devise_for :users 
   get 'welcome/index'
 

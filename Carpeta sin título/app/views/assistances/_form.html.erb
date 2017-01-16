@@ -1,22 +1,21 @@
 
 
 
-<%= form_for([@worker,@assistance]) do |f| %>
-  <% if @assistance.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@assistance.errors.count, "error") %> prohibited this assistance from being saved:</h2>
 
-      <ul>
-      <% @assistance.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+
+<%= form_for([@worker,@assistance]) do |f| %>
 
 <div class="form-asis">
 
+ <% @assistance.errors.full_messages.each do |message| %>
 
+ <div class="deep-orange accent-2 top-space font-size-new white ">
+
+
+ <%= message %>
+
+</div>
+ <% end %>
 
  <%= f.label :asistio ,"Marcar Ausencia" ,class: "label-size"%>
     <%= f.check_box :asistio  %>
@@ -33,7 +32,7 @@
 
 
        <%= f.label :fecha %>
-    <%= f.date_select :fecha ,class: "browser-default",start_year: 2015,order: [:day, :month, :year]%> 
+    <%= f.date_select :fecha ,class: "browser-default",start_year: Date.current.year,end_year: Date.current.year,order: [:day, :month, :year], selected: Date.today %> 
 
    
 

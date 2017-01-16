@@ -28,8 +28,9 @@
             <a class="collapsible-header">Trabajadores<i class="small material-icons">perm_identity</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><%= link_to "Ingresar", new_worker_path(@worker) %></li>
-                <li><%= link_to "Editar/Eliminar", workers_path(@worker) %></li>
+                <li><%= link_to "Panel de Control", workers_path(@worker) %></li>
+                <li><%= link_to "Agregar", new_worker_path(@worker) %></li>
+                
               </ul>
             </div>
           </li>
@@ -37,8 +38,6 @@
             <a class="collapsible-header">Asistencia<i class="small material-icons">today</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a href="#!">Ingresar</a></li>
-                <li><a href="#!">Editar</a></li>
                 <li><%= link_to "Lista Completa", list_index_path %></li>
               </ul>
             </div>
@@ -72,9 +71,8 @@
             <a class="collapsible-header">Informes<i class="small material-icons">assignment</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><%= link_to "Crear informe" %></li>
-                <li><a href="#!">Editar</a></li>
-                <li><a href="#!">Buscar</a></li>
+                <li><%= link_to "Ver Informes" %></li>
+                
               </ul>
             </div>
           </li>

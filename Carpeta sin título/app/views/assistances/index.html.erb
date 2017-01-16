@@ -14,9 +14,9 @@
   </thead>
 
   <tbody>
-    <% @assistances.each do |assistance| %>
+    <% @assistances.workers.each do |assistance| %>
       <tr>
-        <td><%= assistance.worker %></td>
+        <td><%= assistance.worker.nombre %></td>
         <td><%= assistance.asistio %></td>
         <td><%= assistance.excepcion %></td>
         <td><%= assistance.fecha %></td>
