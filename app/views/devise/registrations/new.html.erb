@@ -18,28 +18,31 @@
   </div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+  <div>
+    <label>Ingresa tus datos para poder crear tu cuenta y acceder</label>
+  </div>
 
     <div class="input-field col s12">
     <i class="material-icons prefix">email</i>
-    <%= f.label :email,"Ingresa tu email" %><br />
+    <label for="email">Registra tu email</label>
     <%= f.email_field :email, autofocus: true %>
             </div>
     <div class="input-field col s6">
-              <i class="material-icons prefix">mode_edit</i>
-              <%= f.label :password,"Crea tu contraseña (minimo de 6 caracteres)" %>
-              <%= f.password_field :password, autocomplete: "off" %>
-            </div>
+      <i class="material-icons prefix">mode_edit</i>
+      <label for="password">Crea tu contraseña (minimo de 6 caracteres) </label>
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
 
 
-            <div class="input-field col s6">
-              <i class="material-icons prefix">mode_edit</i>
-              <%= f.label :password_confirmation, "Confirma tu contraseña" %><br />
-              <%=f.password_field :password_confirmation, autocomplete: "off"%>
-            </div>
-              <div class="col s12" style="color: #FFBA22">
-              <%=f.submit "Crear cuenta" ,class:"btn center-align"  %>
-            </div>
-            <%= render "devise/shared/links" %>
+    <div class="input-field col s6">
+      <i class="material-icons prefix">mode_edit</i>
+      <label for="password">Confirma tu contraseña</label>
+      <%=f.password_field :password_confirmation, autocomplete: "off"%>
+    </div>
+    <div class="col s12" style="color: #FFBA22">
+      <%=f.submit "Crear cuenta" ,class:"btn center-align"  %>
+    </div>
+  <%= render "devise/shared/links" %>
 </div>
 
 <% end %>
