@@ -17,6 +17,11 @@
 
     <table class="highlight centered bordered">
         <thead>
+
+
+
+    
+
   
           <tr>
               <th data-field="id"> <i class="material-icons prefix">account_circle</i> Nombre</th>
@@ -28,9 +33,24 @@
 
          <% @assistances.order("fecha desc").each do |assistance| %>
 
+         <% if assistance.worker.nil? %>
+         <%else%>
+
        <tbody>
           <tr>
-            <td><%= assistance.worker %></td>
+
+                 
+            
+
+  
+
+            <td><%=  assistance.worker.nombre %></td>
+
+            
+
+
+
+            
             <td><% if assistance.asistio==false %>
 
             <%= image_tag("Ticket_verde.png", :alt => "rss feed",size: "25") %>
@@ -58,7 +78,7 @@
 
         </tbody>
 
-
+<%end%>
 
 <%end%>
 

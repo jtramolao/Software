@@ -6,15 +6,16 @@ class Worker < ActiveRecord::Base
 	
 	validates :rut, :rut => {:message => "no es valido"} 
 	validates :rut , :presence => {:message => "es requerido"}
+	validates :rut , :uniqueness => {:message => "ya ingresado anteriormente"}
 	validates :direccion , :presence => {:message => "es requerida"}
 	validates :telefono, :presence => {:message => "es requerido"}
-	validates :telefono , length: { is: 9 , :message => "debe tener 9 Numeros"} 
+	validates :telefono , length: { is: 9 , :message => "celular debe tener 9 Numeros"} 
 	validates :email , :presence => {:message => "es requerido"}
 	validates :email, email_format: { message: "no es correcto" } 
 
 
 	
-	has_many :reports
+	has_many :reports , dependent: :destroy
 	has_many :assistances, dependent: :destroy
 	belongs_to :equip
 
