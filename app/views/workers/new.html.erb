@@ -43,7 +43,7 @@
                
               <label for="name">Nombre</label>
             </br>
-             <%=f.text_field :nombre%>
+             <%=f.text_field :nombre,:maxlength => 30%>
             </div>  
             <div class="input-field col s6">
               <i class="material-icons prefix">picture_in_picture</i>
@@ -58,13 +58,13 @@
                <i class="material-icons prefix">my_location</i>
               <label for="name">Direccion</label>
               </br>
-             <%=f.text_field :direccion%>
+             <%=f.text_field :direccion, :maxlength => 30%>
             </div>  
             <div class="input-field col s6">
                <i class="material-icons prefix">phone</i>
               <label for="lastname">Telefono</label>
               </br>
-              <%=f.text_field :telefono %>
+              <%=f.text_field :telefono, :maxlength => 9%>
             </div>            
           </div>
 
@@ -74,7 +74,7 @@
             
               <label for="email">Correo</label>
               </br>
-               <%=f.text_field :email %>
+               <%=f.text_field :email,:maxlength => 30%>
 
             </div>  
 
