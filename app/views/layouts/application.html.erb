@@ -24,6 +24,12 @@
 
 
           <%if user_signed_in?%>
+          <li>
+            <a>BIENVENIDO:</a>
+          </li>
+          <li>
+            <a><%=current_user.email%></a>
+          </li>
                     <li>
             <a class="collapsible-header">Trabajadores<i class="small material-icons">perm_identity</i></a>
             <div class="collapsible-body">

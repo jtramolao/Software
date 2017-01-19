@@ -3,10 +3,14 @@ Rails.application.routes.draw do
   resources :equips
   get 'list/index'
   get 'list/index2'
-  devise_for :users 
   get 'welcome/index'
 
   
+devise_for :users,
+    controllers: {:registrations => "registrations"}
+    as :user do
+  get "/register", to: "registrations#new", as: "register"
+end
 
   resources :workers do
     resources :assistances
