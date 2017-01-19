@@ -14,19 +14,15 @@ class ListController < ApplicationController
   def index
 
 
-    @search = Assistance.search(params[:q])
     
-  	@assistances = @search.result
+    
+  	@assistances =Assistance.all
 
     
 
   end
 
 
-  def search
-  index
-  render :index
-end
 
 
   def index2

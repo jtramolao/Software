@@ -1,17 +1,17 @@
 class Worker < ActiveRecord::Base
 
  
-	validates_format_of :nombre, :with => /\A[a-zA-Z\s]+\z/ 
+	validates_format_of :nombre, :with => /\A[a-zA-Z\s]+\z/ , allow_nil: true
 	validates :nombre , :presence => {:message => "es requerido"}
 	
-	validates :rut, :rut => {:message => "no es valido"} 
+	validates :rut, :rut => {:message => "no es valido"} , allow_nil: true
 	validates :rut , :presence => {:message => "es requerido"}
 	validates :rut , :uniqueness => {:message => "ya ingresado anteriormente"}
 	validates :direccion , :presence => {:message => "es requerida"}
 	validates :telefono, :presence => {:message => "es requerido"}
-	validates :telefono , length: { is: 9 , :message => "celular debe tener 9 Numeros"} 
+	validates :telefono , length: { is: 9 , :message => "celular debe tener 9 Numeros"} , allow_nil: true
 	validates :email , :presence => {:message => "es requerido"}
-	validates :email, email_format: { message: "no es correcto" } 
+	validates :email, email_format: { message: "no es correcto" } , allow_nil: true
 
 
 	
