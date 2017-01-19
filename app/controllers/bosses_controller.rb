@@ -1,7 +1,5 @@
 class BossesController < ApplicationController
-
-
-
+  before_action :authenticate_user!
 
  def index
     @bosses = Boss.all
