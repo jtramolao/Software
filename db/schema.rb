@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111225642) do
+ActiveRecord::Schema.define(version: 20170120032511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,11 +35,8 @@ ActiveRecord::Schema.define(version: 20170111225642) do
     t.string   "mail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
     t.string   "rut"
   end
-
-  add_index "bosses", ["user_id"], name: "index_bosses_on_user_id", using: :btree
 
   create_table "contacts", force: :cascade do |t|
     t.string   "nombre"
@@ -64,6 +61,8 @@ ActiveRecord::Schema.define(version: 20170111225642) do
   create_table "reports", force: :cascade do |t|
     t.date     "fecha"
     t.integer  "bonos"
+    t.integer  "descuentos"
+    t.string   "resumen"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "worker_id"
@@ -76,24 +75,13 @@ ActiveRecord::Schema.define(version: 20170111225642) do
 
   add_index "reports", ["worker_id"], name: "index_reports_on_worker_id", using: :btree
 
-  create_table "reports_workers", force: :cascade do |t|
-  end
-
-  create_table "summaries", force: :cascade do |t|
-    t.date     "fecha"
-    t.integer  "resumen"
-    t.integer  "worker_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "summaries_workers", id: false, force: :cascade do |t|
-    t.integer "summary_id"
+  create_table "reports_workers", id: false, force: :cascade do |t|
+    t.integer "report_id"
     t.integer "worker_id"
   end
 
-  add_index "summaries_workers", ["summary_id"], name: "index_summaries_workers_on_summary_id", using: :btree
-  add_index "summaries_workers", ["worker_id"], name: "index_summaries_workers_on_worker_id", using: :btree
+  add_index "reports_workers", ["report_id"], name: "index_reports_workers_on_report_id", using: :btree
+  add_index "reports_workers", ["worker_id"], name: "index_reports_workers_on_worker_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -106,14 +94,16 @@ ActiveRecord::Schema.define(version: 20170111225642) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "name"
+    t.string   "permission_level"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "worker_id"
+    t.integer  "boss_id"
   end
 
+  add_index "users", ["boss_id"], name: "index_users_on_boss_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["worker_id"], name: "index_users_on_worker_id", using: :btree
 
   create_table "workers", force: :cascade do |t|
     t.string   "nombre"
@@ -129,9 +119,8 @@ ActiveRecord::Schema.define(version: 20170111225642) do
   add_index "workers", ["equip_id"], name: "index_workers_on_equip_id", using: :btree
 
   add_foreign_key "assistances", "workers"
-  add_foreign_key "bosses", "users"
   add_foreign_key "equips", "bosses"
   add_foreign_key "reports", "workers"
-  add_foreign_key "users", "workers"
+  add_foreign_key "users", "bosses"
   add_foreign_key "workers", "equips"
 end

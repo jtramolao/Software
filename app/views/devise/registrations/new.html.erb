@@ -28,13 +28,7 @@
     <label for="email">Registra un email</label>
     <%= f.email_field :email, autofocus: true, :maxlength => 30 %>
             </div>
-                    <div class="input-field col s6">
-          <i class="material-icons prefix">account_circle</i>
-          
-          <%= f.label :boss_id, "Seleccione el jefe" %><br />
-          <% bos_array = Boss.all.map { |bos| [bos.nombre, bos.id] } %>
-           <%= f.select :boss, options_for_select(bos_array, @user.boss) %>
-        </div>
+           
     <div class="input-field col s6">
       <i class="material-icons prefix">mode_edit</i>
       <label for="password">Crea una contraseña (minimo de 6 caracteres) </label>

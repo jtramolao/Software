@@ -127,7 +127,7 @@
   </thead>
 
   <tbody>
-    <% @worker.reports.each do |report| %>
+    <% @worker.reports.order("created_at desc").each do |report| %>
       <tr>
        
        <td><%= link_to report,worker_report_path(report.worker_id, report.id) %></td>
@@ -165,7 +165,7 @@
 
 
 
-<% @worker.assistances.each do |assistance| %>
+<% @worker.assistances.order("fecha desc").each do |assistance| %>
 
 
        <tbody>

@@ -12,6 +12,7 @@ class Worker < ActiveRecord::Base
 	validates :telefono , length: { is: 9 , :message => "celular debe tener 9 Numeros"} , allow_nil: true
 	validates :email , :presence => {:message => "es requerido"}
 	validates :email, email_format: { message: "no es correcto" } , allow_nil: true
+	validates :telefono , :numericality => {:only_integer => true , :message => "deben ser numeros" }, allow_nil: true
 
 
 	
