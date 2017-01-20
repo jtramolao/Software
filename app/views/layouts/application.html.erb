@@ -74,7 +74,7 @@
 
 
           <li>
-            <a class="collapsible-header">Informes<i class="small material-icons">assignment</i></a>
+            <a class="collapsible-header">Informes<i class="small material-icons">description</i></a>
             <div class="collapsible-body">
               <ul>
                <li><%= link_to "Ver Informes", list_index2_path %></li>
@@ -115,16 +115,44 @@
               <ul>
                 <li><%= link_to "Iniciar Sesion", new_user_session_path %></li>
               </ul>
+          </li> 
+
+          <li>
+            <a class="collapsible-header">Informes<i class="small material-icons">description</i></a>
+            <div class="collapsible-body">
+              <ul>
+               <li><%= link_to "Ver Informes", list_index2_path %></li>
+                
+              </ul>
+            </div>
           </li>
           <%end%>
         </ul>
       </li>
     </ul>
     <a href="#!" data-activates="slide-out" class="button-collapse show-on-large"><i style="color: #FFBA22 ">Menu </i></a><i class="small material-icons">assignment</i>
+
+
           
   </div>
 </nav>
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <%= yield %>
