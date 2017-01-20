@@ -12,8 +12,16 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
+<div class="container">
+    <div id="notice_wrapper">
+      <% if notice %>
         <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p> 
+      <% elsif alert %>  
+        <p class="alert"><%= alert %></p>
+      <% end %>   
+    </div>
+</div>        
+
       
         <div class="row center">
           <h5 class="header col s12 light">Web de control de asistencia </h5>
