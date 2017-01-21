@@ -49,7 +49,7 @@
             
 
 
-            <td><%= report.worker.nombre %></td>
+            <td><%=  link_to report.worker.nombre , worker_report_path(report.worker_id, report.id) %></td>
 
 
 
