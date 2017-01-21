@@ -25,7 +25,13 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
+                          <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          
+          <%= f.label :boss_id, "Seleccione el jefe" %><br />
+          <% bos_array = Boss.all.map { |bos| [bos.nombre, bos.id] } %>
+           <%= f.select :boss, options_for_select(bos_array, @user.boss) %>
+        </div>
       <div class="input-field col s6">
       <i class="material-icons prefix">mode_edit</i>
       <label for="password">Nueva contraseña (<%= @minimum_password_length %> caracteres minimo o deja en blanco para no cambiar) </label>
