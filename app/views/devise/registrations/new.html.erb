@@ -25,31 +25,40 @@
 
     <div class="input-field col s12">
     <i class="material-icons prefix">email</i>
-    <label for="email">Registra tu email</label>
+    <label for="email">Registra un email</label>
     <%= f.email_field :email, autofocus: true, :maxlength => 30 %>
             </div>
     <div class="input-field col s6">
       <i class="material-icons prefix">mode_edit</i>
-      <label for="password">Crea tu contraseña (minimo de 6 caracteres) </label>
+      <label for="password">Crea una contraseña (minimo de 6 caracteres) </label>
       <%= f.password_field :password, autocomplete: "off" %>
     </div>
 
 
     <div class="input-field col s6">
       <i class="material-icons prefix">mode_edit</i>
-      <label for="password">Confirma tu contraseña</label>
+      <label for="password">Confirma la contraseña</label>
       <%=f.password_field :password_confirmation, autocomplete: "off"%>
     </div>
+      <div class="input-field col s6">
+      <i class="material-icons prefix">report_problem</i>
+      <label for="password">Ingresa contraseña de administrador para confirmar</label>
+      <%=f.password_field :current_confirmation, autocomplete: "off"%>
+    </div>
+
     <div class="col s12" style="color: #FFBA22">
       <%=f.submit "Crear cuenta" ,class:"btn center-align"  %>
     </div>
+    <%= link_to 'Volver al inicio', welcome_index_path , class:"btn center-align"%>
 </div>
 
 <% end %>
 <% else %>
-  <div>
+  <div class="container">
     <label>Contacta al administrador para crear una cuenta</label>
+                    <%= link_to 'Volver al inicio', welcome_index_path , class:"btn center-align"%>
   </div>
+
 <% end -%>
 </body>
 </html>
