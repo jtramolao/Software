@@ -28,10 +28,16 @@
             <a>BIENVENIDO:</a>
           </li>
           <li>
-            <a><%=current_user.email%></a>
+            <a class="collapsible-header"><%=current_user.email%><i class="small material-icons">perm_identity</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to "Editar Mi cuenta", edit_user_registration_path%></li>
+              </ul>
+            </div>
           </li>
                     <li>
-            <a class="collapsible-header">Trabajadores<i class="small material-icons">perm_identity</i></a>
+            <a class="collapsible-header">Trabajadores<i class="small material-icons">assignment_ind</i></a>
             <div class="collapsible-body">
               <ul>
                 <li><%= link_to "Panel de Control", workers_path(@worker) %></li>
@@ -49,7 +55,7 @@
             </div>
           </li>
            <li>
-            <a class="collapsible-header">Jefes<i class="small material-icons">person_pin</i></a>
+            <a class="collapsible-header">Jefes<i class="small material-icons">supervisor_account</i></a>
             <div class="collapsible-body">
               <ul>
                 <li><%= link_to "Agregar", new_boss_path(@boss) %></li>
@@ -60,7 +66,7 @@
           </li>
 
            <li>
-            <a class="collapsible-header">Equipos<i class="small material-icons">person_pin</i></a>
+            <a class="collapsible-header">Equipos<i class="small material-icons">group_work</i></a>
             <div class="collapsible-body">
               <ul>
                 <li><%= link_to "Agregar ", new_equip_path(@equip) %></li>
@@ -90,23 +96,17 @@
               </ul>
             </div>
           </li>
+          <% if current_user.id == 1%>
           <li>
-            <a class="collapsible-header">Administracion usuarios<i class="small material-icons">person_pin</i></a>
+            <a class="collapsible-header">Usuarios<i class="small material-icons">person_pin</i></a>
             <div class="collapsible-body">
               <ul>
                 <li><%= link_to "Crear cuenta",new_user_registration_path%></li>
-                <li><%= link_to "Editar Mi cuenta", edit_user_registration_path%></li>
               </ul>
             </div>
           </li>
+          <% end -%>
 
-     
-
-          <li>
-              <ul>
-                <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
-              </ul>
-          </li>
           <%else%>
                   <li>
               <ul>

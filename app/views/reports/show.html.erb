@@ -1105,7 +1105,11 @@ big {
           <!-- Begin Personal Information -->
           <div class="self">
             <h1 class="name"><%= @report.worker.nombre %> <br />
+            <% if @report.worker.equip.nil? %>
+              <span>No tiene equipo asociado</span></h1>
+            <%else%>
               <span><%= @report.worker.equip.nombre %></span></h1>
+          <%end%>
             <ul>
               <li class="ad">Cedula Identidad: <%= @report.worker.rut %></li>
               <li class="mail">Email: <%= @report.worker.email %></li>
