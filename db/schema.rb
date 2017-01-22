@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170121150324) do
+ActiveRecord::Schema.define(version: 20170121170705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20170121150324) do
     t.integer  "excepciones"
     t.integer  "horasExtras"
     t.string   "resumen"
+    t.integer  "descuentos"
   end
 
   add_index "reports", ["worker_id"], name: "index_reports_on_worker_id", using: :btree

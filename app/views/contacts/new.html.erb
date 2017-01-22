@@ -21,7 +21,7 @@
   <div class="container">
     <div class="row">
       <div class="col s12 m12 l12">
-        <div id="form-login">
+
           <div class="row">
             <div class="blue-grey darken-3">
               <h5 class="center login-title" style="color: #FFBA22">Contacto
@@ -42,7 +42,7 @@
             <div class="input-field col s6">
               <i class="material-icons prefix">picture_in_picture</i>
               <label for="lastname">Rut</label>
-              <%=f.text_field :rut %>
+              <%=f.text_field :rut,:maxlength =>10 %>
             </div>            
           </div>
 
@@ -73,7 +73,7 @@
               <%= link_to 'Volver al inicio', welcome_index_path , class:"btn center-align"%>
             </div>
           </div>
-        </div>
+
       </div>
     </div>
   </div>
