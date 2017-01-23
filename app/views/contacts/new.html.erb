@@ -37,11 +37,13 @@
             <div class="input-field col s6">
                <i class="material-icons prefix">account_circle</i>
                 <label for="name">Nombre</label>
+                </br>
                 <%=f.text_field :nombre,:maxlength => 30 %>
             </div>  
             <div class="input-field col s6">
               <i class="material-icons prefix">picture_in_picture</i>
               <label for="lastname">Rut</label>
+              </br>
               <%=f.text_field :rut,:maxlength =>10 %>
             </div>            
           </div>
@@ -50,11 +52,13 @@
             <div class="input-field col s6">
                   <i class="material-icons prefix">email</i>
                   <label for="email">Correo</label>
+                  </br>
                   <%=f.text_field :email,:maxlength => 30%>
             </div>  
             <div class="input-field col s6">
                 <i class="material-icons prefix">phone</i>
                 <label for="lastname">Telefono </label>
+                </br>
                 <%=f.text_field :fono, :maxlength => 9 %>
             </div>            
           </div>
